@@ -1,0 +1,1127 @@
+[
+  {
+    "claimId": "A-0001",
+    "sceneId": "site_00/scene_00000",
+    "category": "facade",
+    "statement": "Windows are installed in this room.",
+    "label": "supported",
+    "reason": "Windows and balcony doors with frames and glazing are clearly visible installed in the openings.",
+    "evidence": [
+      "site_00/scene_00000"
+    ],
+    "image_path": "E:\\VS workspace\\Python Code\\Hackathone\\Dataset\\track_a_panoramas\\track_a\\panoramas\\site_00\\scene_00000\\color.png",
+    "model": "gemini-3.5-flash-lite",
+    "label_source": "vlm_pseudo",
+    "review_status": "unreviewed"
+  },
+  {
+    "claimId": "A-0002",
+    "sceneId": "site_00/scene_00000",
+    "category": "finishes",
+    "statement": "Internal walls are fully plastered.",
+    "label": "refuted",
+    "reason": "The internal walls show exposed, rough structural concrete with formwork and joint lines rather than an applied plaster finish.",
+    "evidence": [
+      "site_00/scene_00000"
+    ],
+    "image_path": "E:\\VS workspace\\Python Code\\Hackathone\\Dataset\\track_a_panoramas\\track_a\\panoramas\\site_00\\scene_00000\\color.png",
+    "model": "gemini-3.5-flash-lite",
+    "label_source": "vlm_pseudo",
+    "review_status": "unreviewed"
+  },
+  {
+    "claimId": "A-0003",
+    "sceneId": "site_00/scene_00000",
+    "category": "mep_services",
+    "statement": "Electrical socket boxes are roughed into the walls.",
+    "label": "refuted",
+    "reason": "No electrical socket back-boxes are visible roughed into the walls; only raw concrete surfaces and some conduits/sleeves near the floor are present.",
+    "evidence": [
+      "site_00/scene_00000"
+    ],
+    "image_path": "E:\\VS workspace\\Python Code\\Hackathone\\Dataset\\track_a_panoramas\\track_a\\panoramas\\site_00\\scene_00000\\color.png",
+    "model": "gemini-3.5-flash-lite",
+    "label_source": "vlm_pseudo",
+    "review_status": "unreviewed"
+  },
+  {
+    "claimId": "A-0004",
+    "sceneId": "site_00/scene_00000",
+    "category": "finishes",
+    "statement": "Floor screed has been laid.",
+    "label": "refuted",
+    "reason": "The floor consists of a rough structural concrete slab with surface marks and debris, showing no separate applied screed layer.",
+    "evidence": [
+      "site_00/scene_00000"
+    ],
+    "image_path": "E:\\VS workspace\\Python Code\\Hackathone\\Dataset\\track_a_panoramas\\track_a\\panoramas\\site_00\\scene_00000\\color.png",
+    "model": "gemini-3.5-flash-lite",
+    "label_source": "vlm_pseudo",
+    "review_status": "unreviewed"
+  },
+  {
+    "claimId": "A-0005",
+    "sceneId": "site_00/scene_00006",
+    "category": "facade",
+    "statement": "Windows are installed in the external wall.",
+    "label": "supported",
+    "reason": "Windows with frames and glazing are clearly visible installed in the external brick wall openings.",
+    "evidence": [
+      "site_00/scene_00006"
+    ],
+    "image_path": "E:\\VS workspace\\Python Code\\Hackathone\\Dataset\\track_a_panoramas\\track_a\\panoramas\\site_00\\scene_00006\\color.png",
+    "model": "gemini-3.5-flash-lite",
+    "label_source": "vlm_pseudo",
+    "review_status": "unreviewed"
+  },
+  {
+    "claimId": "A-0006",
+    "sceneId": "site_00/scene_00006",
+    "category": "finishes",
+    "statement": "The brick external wall has received its internal plaster.",
+    "label": "refuted",
+    "reason": "The brick external wall remains exposed and clearly lacks any applied internal plaster layer.",
+    "evidence": [
+      "site_00/scene_00006"
+    ],
+    "image_path": "E:\\VS workspace\\Python Code\\Hackathone\\Dataset\\track_a_panoramas\\track_a\\panoramas\\site_00\\scene_00006\\color.png",
+    "model": "gemini-3.5-flash-lite",
+    "label_source": "vlm_pseudo",
+    "review_status": "unreviewed"
+  },
+  {
+    "claimId": "A-0007",
+    "sceneId": "site_00/scene_00006",
+    "category": "mep_services",
+    "statement": "Ceiling-mounted ventilation ductwork is installed.",
+    "label": "refuted",
+    "reason": "No ceiling-mounted ventilation ductwork is visible on the exposed concrete ceiling slabs.",
+    "evidence": [
+      "site_00/scene_00006"
+    ],
+    "image_path": "E:\\VS workspace\\Python Code\\Hackathone\\Dataset\\track_a_panoramas\\track_a\\panoramas\\site_00\\scene_00006\\color.png",
+    "model": "gemini-3.5-flash-lite",
+    "label_source": "vlm_pseudo",
+    "review_status": "unreviewed"
+  },
+  {
+    "claimId": "A-0008",
+    "sceneId": "site_00/scene_00012",
+    "category": "finishes",
+    "statement": "Internal door leafs are hung.",
+    "label": "refuted",
+    "reason": "The visible internal door openings show frames or bare concrete reveals, but no door leafs are hung.",
+    "evidence": [
+      "site_00/scene_00012"
+    ],
+    "image_path": "E:\\VS workspace\\Python Code\\Hackathone\\Dataset\\track_a_panoramas\\track_a\\panoramas\\site_00\\scene_00012\\color.png",
+    "model": "gemini-3.5-flash-lite",
+    "label_source": "vlm_pseudo",
+    "review_status": "unreviewed"
+  },
+  {
+    "claimId": "A-0009",
+    "sceneId": "site_00/scene_00012",
+    "category": "facade",
+    "statement": "Window openings are still open to the weather.",
+    "label": "refuted",
+    "reason": "Windows with frames and glazing are visibly installed in the exterior openings.",
+    "evidence": [
+      "site_00/scene_00012"
+    ],
+    "image_path": "E:\\VS workspace\\Python Code\\Hackathone\\Dataset\\track_a_panoramas\\track_a\\panoramas\\site_00\\scene_00012\\color.png",
+    "model": "gemini-3.5-flash-lite",
+    "label_source": "vlm_pseudo",
+    "review_status": "unreviewed"
+  },
+  {
+    "claimId": "A-0010",
+    "sceneId": "site_00/scene_00012",
+    "category": "structure",
+    "statement": "The roof slab above this room has been poured.",
+    "label": "supported",
+    "reason": "The concrete roof slab above the room is visibly poured and forms the ceiling of the space.",
+    "evidence": [
+      "site_00/scene_00012"
+    ],
+    "image_path": "E:\\VS workspace\\Python Code\\Hackathone\\Dataset\\track_a_panoramas\\track_a\\panoramas\\site_00\\scene_00012\\color.png",
+    "model": "gemini-3.5-flash-lite",
+    "label_source": "vlm_pseudo",
+    "review_status": "unreviewed"
+  },
+  {
+    "claimId": "A-0011",
+    "sceneId": "site_00/scene_00018",
+    "category": "mep_services",
+    "statement": "Electrical conduit drops are present on the walls.",
+    "label": "no_evidence",
+    "reason": "Electrical conduit drops are not visible on the walls in the panorama; surfaces show raw brick and concrete without installed conduit drops.",
+    "evidence": [
+      "site_00/scene_00018"
+    ],
+    "image_path": "E:\\VS workspace\\Python Code\\Hackathone\\Dataset\\track_a_panoramas\\track_a\\panoramas\\site_00\\scene_00018\\color.png",
+    "model": "gemini-3.5-flash-lite",
+    "label_source": "vlm_pseudo",
+    "review_status": "unreviewed"
+  },
+  {
+    "claimId": "A-0012",
+    "sceneId": "site_00/scene_00018",
+    "category": "finishes",
+    "statement": "Suspended ceiling grid has been installed.",
+    "label": "refuted",
+    "reason": "The concrete ceiling slab is completely exposed, and no suspended ceiling grid has been installed.",
+    "evidence": [
+      "site_00/scene_00018"
+    ],
+    "image_path": "E:\\VS workspace\\Python Code\\Hackathone\\Dataset\\track_a_panoramas\\track_a\\panoramas\\site_00\\scene_00018\\color.png",
+    "model": "gemini-3.5-flash-lite",
+    "label_source": "vlm_pseudo",
+    "review_status": "unreviewed"
+  },
+  {
+    "claimId": "A-0013",
+    "sceneId": "site_00/scene_00024",
+    "category": "finishes",
+    "statement": "Internal walls are plastered.",
+    "label": "supported",
+    "reason": "Internal walls show applied plaster finishes across multiple visible wall surfaces.",
+    "evidence": [
+      "site_00/scene_00024"
+    ],
+    "image_path": "E:\\VS workspace\\Python Code\\Hackathone\\Dataset\\track_a_panoramas\\track_a\\panoramas\\site_00\\scene_00024\\color.png",
+    "model": "gemini-3.5-flash-lite",
+    "label_source": "vlm_pseudo",
+    "review_status": "unreviewed"
+  },
+  {
+    "claimId": "A-0014",
+    "sceneId": "site_00/scene_00024",
+    "category": "finishes",
+    "statement": "Final floor covering (tiles or parquet) has been laid.",
+    "label": "refuted",
+    "reason": "The floors are unfinished concrete or screed base without final floor coverings such as tiles or parquet laid.",
+    "evidence": [
+      "site_00/scene_00024"
+    ],
+    "image_path": "E:\\VS workspace\\Python Code\\Hackathone\\Dataset\\track_a_panoramas\\track_a\\panoramas\\site_00\\scene_00024\\color.png",
+    "model": "gemini-3.5-flash-lite",
+    "label_source": "vlm_pseudo",
+    "review_status": "unreviewed"
+  },
+  {
+    "claimId": "A-0015",
+    "sceneId": "site_00/scene_00024",
+    "category": "mep_services",
+    "statement": "Radiators are mounted under the windows.",
+    "label": "refuted",
+    "reason": "No radiators are mounted under the windows, and the spaces below the windows are empty.",
+    "evidence": [
+      "site_00/scene_00024"
+    ],
+    "image_path": "E:\\VS workspace\\Python Code\\Hackathone\\Dataset\\track_a_panoramas\\track_a\\panoramas\\site_00\\scene_00024\\color.png",
+    "model": "gemini-3.5-flash-lite",
+    "label_source": "vlm_pseudo",
+    "review_status": "unreviewed"
+  },
+  {
+    "claimId": "A-0016",
+    "sceneId": "site_00/scene_00030",
+    "category": "structure",
+    "statement": "A ceiling shaft/opening remains unclosed in this area.",
+    "label": "supported",
+    "reason": "Unclosed ceiling shafts/openings are clearly visible in the concrete ceiling slab.",
+    "evidence": [
+      "site_00/scene_00030"
+    ],
+    "image_path": "E:\\VS workspace\\Python Code\\Hackathone\\Dataset\\track_a_panoramas\\track_a\\panoramas\\site_00\\scene_00030\\color.png",
+    "model": "gemini-3.5-flash-lite",
+    "label_source": "vlm_pseudo",
+    "review_status": "unreviewed"
+  },
+  {
+    "claimId": "A-0017",
+    "sceneId": "site_00/scene_00030",
+    "category": "mep_services",
+    "statement": "Sprinkler pipework is installed at the ceiling.",
+    "label": "refuted",
+    "reason": "No sprinkler pipework is visible at the ceiling; only raw concrete with core-drilled openings is present.",
+    "evidence": [
+      "site_00/scene_00030"
+    ],
+    "image_path": "E:\\VS workspace\\Python Code\\Hackathone\\Dataset\\track_a_panoramas\\track_a\\panoramas\\site_00\\scene_00030\\color.png",
+    "model": "gemini-3.5-flash-lite",
+    "label_source": "vlm_pseudo",
+    "review_status": "unreviewed"
+  },
+  {
+    "claimId": "A-0018",
+    "sceneId": "site_00/scene_00030",
+    "category": "finishes",
+    "statement": "The basement waterproofing membrane is visible on the walls behind the scanner.",
+    "label": "no_evidence",
+    "reason": "The walls behind the scanner viewpoint are not visible in the panorama.",
+    "evidence": [
+      "site_00/scene_00030"
+    ],
+    "image_path": "E:\\VS workspace\\Python Code\\Hackathone\\Dataset\\track_a_panoramas\\track_a\\panoramas\\site_00\\scene_00030\\color.png",
+    "model": "gemini-3.5-flash-lite",
+    "label_source": "vlm_pseudo",
+    "review_status": "unreviewed"
+  },
+  {
+    "claimId": "A-0019",
+    "sceneId": "site_01/scene_01000",
+    "category": "finishes",
+    "statement": "The stair walls are plastered and painted.",
+    "label": "refuted",
+    "reason": "The stair walls show unfinished, rough concrete surfaces without plaster or paint finishes.",
+    "evidence": [
+      "site_01/scene_01000"
+    ],
+    "image_path": "E:\\VS workspace\\Python Code\\Hackathone\\Dataset\\track_a_panoramas\\track_a\\panoramas\\site_01\\scene_01000\\color.png",
+    "model": "gemini-3.5-flash-lite",
+    "label_source": "vlm_pseudo",
+    "review_status": "unreviewed"
+  },
+  {
+    "claimId": "A-0020",
+    "sceneId": "site_01/scene_01000",
+    "category": "structure",
+    "statement": "A permanent handrail is fitted to the stair.",
+    "label": "refuted",
+    "reason": "No permanent handrail is fitted to the stair walls or steps.",
+    "evidence": [
+      "site_01/scene_01000"
+    ],
+    "image_path": "E:\\VS workspace\\Python Code\\Hackathone\\Dataset\\track_a_panoramas\\track_a\\panoramas\\site_01\\scene_01000\\color.png",
+    "model": "gemini-3.5-flash-lite",
+    "label_source": "vlm_pseudo",
+    "review_status": "unreviewed"
+  },
+  {
+    "claimId": "A-0021",
+    "sceneId": "site_01/scene_01003",
+    "category": "mep_services",
+    "statement": "Electrical conduits are laid in wall chases.",
+    "label": "supported",
+    "reason": "Electrical conduits and chases are visibly installed along the walls.",
+    "evidence": [
+      "site_01/scene_01003"
+    ],
+    "image_path": "E:\\VS workspace\\Python Code\\Hackathone\\Dataset\\track_a_panoramas\\track_a\\panoramas\\site_01\\scene_01003\\color.png",
+    "model": "gemini-3.5-flash-lite",
+    "label_source": "vlm_pseudo",
+    "review_status": "unreviewed"
+  },
+  {
+    "claimId": "A-0022",
+    "sceneId": "site_01/scene_01003",
+    "category": "facade",
+    "statement": "Windows are installed in this apartment.",
+    "label": "supported",
+    "reason": "Windows with frames and glazing are visible in the background openings.",
+    "evidence": [
+      "site_01/scene_01003"
+    ],
+    "image_path": "E:\\VS workspace\\Python Code\\Hackathone\\Dataset\\track_a_panoramas\\track_a\\panoramas\\site_01\\scene_01003\\color.png",
+    "model": "gemini-3.5-flash-lite",
+    "label_source": "vlm_pseudo",
+    "review_status": "unreviewed"
+  },
+  {
+    "claimId": "A-0023",
+    "sceneId": "site_01/scene_01003",
+    "category": "finishes",
+    "statement": "Floor screed has been poured.",
+    "label": "no_evidence",
+    "reason": "The visible floor surface appears as rough structural concrete and distinguishing a poured screed layer is not possible from the visual evidence alone.",
+    "evidence": [
+      "site_01/scene_01003"
+    ],
+    "image_path": "E:\\VS workspace\\Python Code\\Hackathone\\Dataset\\track_a_panoramas\\track_a\\panoramas\\site_01\\scene_01003\\color.png",
+    "model": "gemini-3.5-flash-lite",
+    "label_source": "vlm_pseudo",
+    "review_status": "unreviewed"
+  },
+  {
+    "claimId": "A-0024",
+    "sceneId": "site_01/scene_01006",
+    "category": "mep_services",
+    "statement": "Wall chases have been cut and conduit installed.",
+    "label": "supported",
+    "reason": "Wall chases are visibly cut into the concrete walls, and electrical conduits are installed within them.",
+    "evidence": [
+      "site_01/scene_01006"
+    ],
+    "image_path": "E:\\VS workspace\\Python Code\\Hackathone\\Dataset\\track_a_panoramas\\track_a\\panoramas\\site_01\\scene_01006\\color.png",
+    "model": "gemini-3.5-flash-lite",
+    "label_source": "vlm_pseudo",
+    "review_status": "unreviewed"
+  },
+  {
+    "claimId": "A-0025",
+    "sceneId": "site_01/scene_01006",
+    "category": "finishes",
+    "statement": "Walls have received their finish plaster over the chases.",
+    "label": "refuted",
+    "reason": "The wall chases and conduits are clearly exposed and open; finish plaster has not been applied over them.",
+    "evidence": [
+      "site_01/scene_01006"
+    ],
+    "image_path": "E:\\VS workspace\\Python Code\\Hackathone\\Dataset\\track_a_panoramas\\track_a\\panoramas\\site_01\\scene_01006\\color.png",
+    "model": "gemini-3.5-flash-lite",
+    "label_source": "vlm_pseudo",
+    "review_status": "unreviewed"
+  },
+  {
+    "claimId": "A-0026",
+    "sceneId": "site_01/scene_01006",
+    "category": "mep_services",
+    "statement": "Underfloor heating pipework is visible on the floor.",
+    "label": "refuted",
+    "reason": "No underfloor heating pipework is visible on the floor surface; only a bare concrete or screed floor is present.",
+    "evidence": [
+      "site_01/scene_01006"
+    ],
+    "image_path": "E:\\VS workspace\\Python Code\\Hackathone\\Dataset\\track_a_panoramas\\track_a\\panoramas\\site_01\\scene_01006\\color.png",
+    "model": "gemini-3.5-flash-lite",
+    "label_source": "vlm_pseudo",
+    "review_status": "unreviewed"
+  },
+  {
+    "claimId": "A-0027",
+    "sceneId": "site_01/scene_01013",
+    "category": "mep_services",
+    "statement": "Sanitary carrier frames with supply pipework are mounted.",
+    "label": "supported",
+    "reason": "Sanitary carrier frames with connected red supply/drain pipework are clearly visible mounted against the metal-stud partition.",
+    "evidence": [
+      "site_01/scene_01013"
+    ],
+    "image_path": "E:\\VS workspace\\Python Code\\Hackathone\\Dataset\\track_a_panoramas\\track_a\\panoramas\\site_01\\scene_01013\\color.png",
+    "model": "gemini-3.5-flash-lite",
+    "label_source": "vlm_pseudo",
+    "review_status": "unreviewed"
+  },
+  {
+    "claimId": "A-0028",
+    "sceneId": "site_01/scene_01013",
+    "category": "partitions",
+    "statement": "Metal-stud partitions are framed, with boarding started.",
+    "label": "supported",
+    "reason": "Metal-stud partitions are framed and partial boarding (plasterboard sheets) is clearly installed on the framing.",
+    "evidence": [
+      "site_01/scene_01013"
+    ],
+    "image_path": "E:\\VS workspace\\Python Code\\Hackathone\\Dataset\\track_a_panoramas\\track_a\\panoramas\\site_01\\scene_01013\\color.png",
+    "model": "gemini-3.5-flash-lite",
+    "label_source": "vlm_pseudo",
+    "review_status": "unreviewed"
+  },
+  {
+    "claimId": "A-0029",
+    "sceneId": "site_01/scene_01013",
+    "category": "finishes",
+    "statement": "The roof insulation is fully covered by plasterboard.",
+    "label": "refuted",
+    "reason": "The roof insulation surfaces visible overhead show exposed foil/membrane wrapping with Wurth branding and wooden battens, not fully covered by plasterboard.",
+    "evidence": [
+      "site_01/scene_01013"
+    ],
+    "image_path": "E:\\VS workspace\\Python Code\\Hackathone\\Dataset\\track_a_panoramas\\track_a\\panoramas\\site_01\\scene_01013\\color.png",
+    "model": "gemini-3.5-flash-lite",
+    "label_source": "vlm_pseudo",
+    "review_status": "unreviewed"
+  },
+  {
+    "claimId": "A-0030",
+    "sceneId": "site_01/scene_01013",
+    "category": "mep_services",
+    "statement": "The WC pans and basins themselves are installed on the carriers.",
+    "label": "refuted",
+    "reason": "Only the rough-in carrier frames and pipework are mounted; the WC pans and basins themselves are not yet installed.",
+    "evidence": [
+      "site_01/scene_01013"
+    ],
+    "image_path": "E:\\VS workspace\\Python Code\\Hackathone\\Dataset\\track_a_panoramas\\track_a\\panoramas\\site_01\\scene_01013\\color.png",
+    "model": "gemini-3.5-flash-lite",
+    "label_source": "vlm_pseudo",
+    "review_status": "unreviewed"
+  },
+  {
+    "claimId": "A-0031",
+    "sceneId": "site_01/scene_01016",
+    "category": "facade",
+    "statement": "Glazed balcony doors are installed.",
+    "label": "supported",
+    "reason": "Glazed balcony doors and windows with frames and glazing are clearly visible and installed.",
+    "evidence": [
+      "site_01/scene_01016"
+    ],
+    "image_path": "E:\\VS workspace\\Python Code\\Hackathone\\Dataset\\track_a_panoramas\\track_a\\panoramas\\site_01\\scene_01016\\color.png",
+    "model": "gemini-3.5-flash-lite",
+    "label_source": "vlm_pseudo",
+    "review_status": "unreviewed"
+  },
+  {
+    "claimId": "A-0032",
+    "sceneId": "site_01/scene_01016",
+    "category": "finishes",
+    "statement": "Internal door leafs are hung in the partition doorways.",
+    "label": "refuted",
+    "reason": "The partition doorway opening is visible, but no door leaf is hung in the frame.",
+    "evidence": [
+      "site_01/scene_01016"
+    ],
+    "image_path": "E:\\VS workspace\\Python Code\\Hackathone\\Dataset\\track_a_panoramas\\track_a\\panoramas\\site_01\\scene_01016\\color.png",
+    "model": "gemini-3.5-flash-lite",
+    "label_source": "vlm_pseudo",
+    "review_status": "unreviewed"
+  },
+  {
+    "claimId": "A-0033",
+    "sceneId": "site_01/scene_01016",
+    "category": "mep_services",
+    "statement": "The electrical distribution board is fitted and wired in this room.",
+    "label": "refuted",
+    "reason": "No electrical distribution board is visible on the walls; only raw partition walls and conduit paths are present.",
+    "evidence": [
+      "site_01/scene_01016"
+    ],
+    "image_path": "E:\\VS workspace\\Python Code\\Hackathone\\Dataset\\track_a_panoramas\\track_a\\panoramas\\site_01\\scene_01016\\color.png",
+    "model": "gemini-3.5-flash-lite",
+    "label_source": "vlm_pseudo",
+    "review_status": "unreviewed"
+  },
+  {
+    "claimId": "A-0034",
+    "sceneId": "site_02/scene_02000",
+    "category": "mep_services",
+    "statement": "Ventilation ductwork is installed at the ceiling of this bay.",
+    "label": "refuted",
+    "reason": "The ceiling of the bay is exposed bare concrete with no ventilation ductwork installed.",
+    "evidence": [
+      "site_02/scene_02000"
+    ],
+    "image_path": "E:\\VS workspace\\Python Code\\Hackathone\\Dataset\\track_a_panoramas\\track_a\\panoramas\\site_02\\scene_02000\\color.png",
+    "model": "gemini-3.5-flash-lite",
+    "label_source": "vlm_pseudo",
+    "review_status": "unreviewed"
+  },
+  {
+    "claimId": "A-0035",
+    "sceneId": "site_02/scene_02000",
+    "category": "materials_logistics",
+    "statement": "Drywall track/profile bundles are staged on the slab.",
+    "label": "supported",
+    "reason": "Bundles of metal drywall tracks and profiles are clearly visible staged on the floor slab.",
+    "evidence": [
+      "site_02/scene_02000"
+    ],
+    "image_path": "E:\\VS workspace\\Python Code\\Hackathone\\Dataset\\track_a_panoramas\\track_a\\panoramas\\site_02\\scene_02000\\color.png",
+    "model": "gemini-3.5-flash-lite",
+    "label_source": "vlm_pseudo",
+    "review_status": "unreviewed"
+  },
+  {
+    "claimId": "A-0036",
+    "sceneId": "site_02/scene_02000",
+    "category": "finishes",
+    "statement": "Line markings for parking bays have been painted.",
+    "label": "refuted",
+    "reason": "The floor slab is bare and unfinished; no line markings or parking bay paintings are present.",
+    "evidence": [
+      "site_02/scene_02000"
+    ],
+    "image_path": "E:\\VS workspace\\Python Code\\Hackathone\\Dataset\\track_a_panoramas\\track_a\\panoramas\\site_02\\scene_02000\\color.png",
+    "model": "gemini-3.5-flash-lite",
+    "label_source": "vlm_pseudo",
+    "review_status": "unreviewed"
+  },
+  {
+    "claimId": "A-0037",
+    "sceneId": "site_02/scene_02005",
+    "category": "mep_services",
+    "statement": "Galvanized services containment is installed at the ceiling.",
+    "label": "refuted",
+    "reason": "Galvanized services containment or cable trays are not installed at the ceiling in the visible areas.",
+    "evidence": [
+      "site_02/scene_02005"
+    ],
+    "image_path": "E:\\VS workspace\\Python Code\\Hackathone\\Dataset\\track_a_panoramas\\track_a\\panoramas\\site_02\\scene_02005\\color.png",
+    "model": "gemini-3.5-flash-lite",
+    "label_source": "vlm_pseudo",
+    "review_status": "unreviewed"
+  },
+  {
+    "claimId": "A-0038",
+    "sceneId": "site_02/scene_02005",
+    "category": "structure",
+    "statement": "The permanent stair between levels is complete with balustrade.",
+    "label": "refuted",
+    "reason": "Only a temporary scaffold stair is visible; the permanent stair with balustrade is not complete or installed.",
+    "evidence": [
+      "site_02/scene_02005"
+    ],
+    "image_path": "E:\\VS workspace\\Python Code\\Hackathone\\Dataset\\track_a_panoramas\\track_a\\panoramas\\site_02\\scene_02005\\color.png",
+    "model": "gemini-3.5-flash-lite",
+    "label_source": "vlm_pseudo",
+    "review_status": "unreviewed"
+  },
+  {
+    "claimId": "A-0039",
+    "sceneId": "site_02/scene_02005",
+    "category": "finishes",
+    "statement": "The floor slab is dry and cleaned ready for coating.",
+    "label": "refuted",
+    "reason": "The floor slab shows standing water and debris, meaning it is neither dry nor cleaned ready for coating.",
+    "evidence": [
+      "site_02/scene_02005"
+    ],
+    "image_path": "E:\\VS workspace\\Python Code\\Hackathone\\Dataset\\track_a_panoramas\\track_a\\panoramas\\site_02\\scene_02005\\color.png",
+    "model": "gemini-3.5-flash-lite",
+    "label_source": "vlm_pseudo",
+    "review_status": "unreviewed"
+  },
+  {
+    "claimId": "A-0040",
+    "sceneId": "site_03/scene_03000",
+    "category": "facade",
+    "statement": "Facade glazing is installed along the window line.",
+    "label": "supported",
+    "reason": "Windows with frames and glazing are visibly installed along the exterior window line.",
+    "evidence": [
+      "site_03/scene_03000"
+    ],
+    "image_path": "E:\\VS workspace\\Python Code\\Hackathone\\Dataset\\track_a_panoramas\\track_a\\panoramas\\site_03\\scene_03000\\color.png",
+    "model": "gemini-3.5-flash-lite",
+    "label_source": "vlm_pseudo",
+    "review_status": "unreviewed"
+  },
+  {
+    "claimId": "A-0041",
+    "sceneId": "site_03/scene_03000",
+    "category": "materials_logistics",
+    "statement": "Additional glazed elements are staged on the floor awaiting installation.",
+    "label": "supported",
+    "reason": "Additional glazed elements and window frames are visibly staged and wrapped on pallets on the floor.",
+    "evidence": [
+      "site_03/scene_03000"
+    ],
+    "image_path": "E:\\VS workspace\\Python Code\\Hackathone\\Dataset\\track_a_panoramas\\track_a\\panoramas\\site_03\\scene_03000\\color.png",
+    "model": "gemini-3.5-flash-lite",
+    "label_source": "vlm_pseudo",
+    "review_status": "unreviewed"
+  },
+  {
+    "claimId": "A-0042",
+    "sceneId": "site_03/scene_03000",
+    "category": "partitions",
+    "statement": "Internal partition walls have been built on this floor.",
+    "label": "refuted",
+    "reason": "The space consists of an open floor plan with bare concrete columns and walls; no internal partition walls have been built.",
+    "evidence": [
+      "site_03/scene_03000"
+    ],
+    "image_path": "E:\\VS workspace\\Python Code\\Hackathone\\Dataset\\track_a_panoramas\\track_a\\panoramas\\site_03\\scene_03000\\color.png",
+    "model": "gemini-3.5-flash-lite",
+    "label_source": "vlm_pseudo",
+    "review_status": "unreviewed"
+  },
+  {
+    "claimId": "A-0043",
+    "sceneId": "site_03/scene_03018",
+    "category": "finishes",
+    "statement": "The floor screed is poured across this level.",
+    "label": "no_evidence",
+    "reason": "The visible floor surface appears to be a structural concrete slab without clear visible layer boundaries or indicators confirming that a separate floor screed has been poured.",
+    "evidence": [
+      "site_03/scene_03018"
+    ],
+    "image_path": "E:\\VS workspace\\Python Code\\Hackathone\\Dataset\\track_a_panoramas\\track_a\\panoramas\\site_03\\scene_03018\\color.png",
+    "model": "gemini-3.5-flash-lite",
+    "label_source": "vlm_pseudo",
+    "review_status": "unreviewed"
+  },
+  {
+    "claimId": "A-0044",
+    "sceneId": "site_03/scene_03018",
+    "category": "structure",
+    "statement": "The core/lift shaft opening is protected by hoarding.",
+    "label": "supported",
+    "reason": "The lift shaft opening is covered with black sheeting and protected by safety barriers/hoarding with red-and-white warning tape across the front.",
+    "evidence": [
+      "site_03/scene_03018"
+    ],
+    "image_path": "E:\\VS workspace\\Python Code\\Hackathone\\Dataset\\track_a_panoramas\\track_a\\panoramas\\site_03\\scene_03018\\color.png",
+    "model": "gemini-3.5-flash-lite",
+    "label_source": "vlm_pseudo",
+    "review_status": "unreviewed"
+  },
+  {
+    "claimId": "A-0045",
+    "sceneId": "site_03/scene_03018",
+    "category": "mep_services",
+    "statement": "Sprinkler heads are fitted to the soffit.",
+    "label": "refuted",
+    "reason": "No sprinkler heads are fitted to the concrete soffit; only bare concrete ceiling panels and occasional pipe penetrations are visible.",
+    "evidence": [
+      "site_03/scene_03018"
+    ],
+    "image_path": "E:\\VS workspace\\Python Code\\Hackathone\\Dataset\\track_a_panoramas\\track_a\\panoramas\\site_03\\scene_03018\\color.png",
+    "model": "gemini-3.5-flash-lite",
+    "label_source": "vlm_pseudo",
+    "review_status": "unreviewed"
+  },
+  {
+    "claimId": "A-0046",
+    "sceneId": "site_03/scene_03037",
+    "category": "partitions",
+    "statement": "Metal-stud partitions are framed but not yet boarded.",
+    "label": "supported",
+    "reason": "Metal-stud partition framing is clearly visible and unboarded.",
+    "evidence": [
+      "site_03/scene_03037"
+    ],
+    "image_path": "E:\\VS workspace\\Python Code\\Hackathone\\Dataset\\track_a_panoramas\\track_a\\panoramas\\site_03\\scene_03037\\color.png",
+    "model": "gemini-3.5-flash-lite",
+    "label_source": "vlm_pseudo",
+    "review_status": "unreviewed"
+  },
+  {
+    "claimId": "A-0047",
+    "sceneId": "site_03/scene_03037",
+    "category": "mep_services",
+    "statement": "Sanitary carrier frames and riser pipework are installed.",
+    "label": "supported",
+    "reason": "Sanitary carrier frames and connected riser pipework are clearly visible.",
+    "evidence": [
+      "site_03/scene_03037"
+    ],
+    "image_path": "E:\\VS workspace\\Python Code\\Hackathone\\Dataset\\track_a_panoramas\\track_a\\panoramas\\site_03\\scene_03037\\color.png",
+    "model": "gemini-3.5-flash-lite",
+    "label_source": "vlm_pseudo",
+    "review_status": "unreviewed"
+  },
+  {
+    "claimId": "A-0048",
+    "sceneId": "site_03/scene_03037",
+    "category": "finishes",
+    "statement": "The WC cubicle partitions and sanitaryware are fitted.",
+    "label": "refuted",
+    "reason": "WC cubicle partitions and sanitaryware are not fitted; only bare frames and rough-in piping are present.",
+    "evidence": [
+      "site_03/scene_03037"
+    ],
+    "image_path": "E:\\VS workspace\\Python Code\\Hackathone\\Dataset\\track_a_panoramas\\track_a\\panoramas\\site_03\\scene_03037\\color.png",
+    "model": "gemini-3.5-flash-lite",
+    "label_source": "vlm_pseudo",
+    "review_status": "unreviewed"
+  },
+  {
+    "claimId": "A-0049",
+    "sceneId": "site_05/scene_05000",
+    "category": "facade",
+    "statement": "The permanent facade is installed on this elevation.",
+    "label": "supported",
+    "reason": "The permanent glass facade with mullion and transom framing is clearly visible and installed across the elevation.",
+    "evidence": [
+      "site_05/scene_05000"
+    ],
+    "image_path": "E:\\VS workspace\\Python Code\\Hackathone\\Dataset\\track_a_panoramas\\track_a\\panoramas\\site_05\\scene_05000\\color.png",
+    "model": "gemini-3.5-flash-lite",
+    "label_source": "vlm_pseudo",
+    "review_status": "unreviewed"
+  },
+  {
+    "claimId": "A-0050",
+    "sceneId": "site_05/scene_05000",
+    "category": "structure",
+    "statement": "Edge protection is in place at the slab edge.",
+    "label": "supported",
+    "reason": "Red and white edge protection rails are visibly installed along the open slab edges.",
+    "evidence": [
+      "site_05/scene_05000"
+    ],
+    "image_path": "E:\\VS workspace\\Python Code\\Hackathone\\Dataset\\track_a_panoramas\\track_a\\panoramas\\site_05\\scene_05000\\color.png",
+    "model": "gemini-3.5-flash-lite",
+    "label_source": "vlm_pseudo",
+    "review_status": "unreviewed"
+  },
+  {
+    "claimId": "A-0051",
+    "sceneId": "site_05/scene_05021",
+    "category": "partitions",
+    "statement": "Drywall boarding has started on this floor.",
+    "label": "supported",
+    "reason": "Drywall boarding is visibly installed on metal stud framing partitions in the space.",
+    "evidence": [
+      "site_05/scene_05021"
+    ],
+    "image_path": "E:\\VS workspace\\Python Code\\Hackathone\\Dataset\\track_a_panoramas\\track_a\\panoramas\\site_05\\scene_05021\\color.png",
+    "model": "gemini-3.5-flash-lite",
+    "label_source": "vlm_pseudo",
+    "review_status": "unreviewed"
+  },
+  {
+    "claimId": "A-0052",
+    "sceneId": "site_05/scene_05021",
+    "category": "materials_logistics",
+    "statement": "Plasterboard stock is staged on the slab.",
+    "label": "supported",
+    "reason": "Stacks of plasterboard are clearly visible staged on the floor slab.",
+    "evidence": [
+      "site_05/scene_05021"
+    ],
+    "image_path": "E:\\VS workspace\\Python Code\\Hackathone\\Dataset\\track_a_panoramas\\track_a\\panoramas\\site_05\\scene_05021\\color.png",
+    "model": "gemini-3.5-flash-lite",
+    "label_source": "vlm_pseudo",
+    "review_status": "unreviewed"
+  },
+  {
+    "claimId": "A-0053",
+    "sceneId": "site_05/scene_05021",
+    "category": "finishes",
+    "statement": "Partitions on this floor are taped, filled and ready for decoration.",
+    "label": "refuted",
+    "reason": "The visible drywall surfaces show raw joints and uncompleted boarding without taping and finishing completed across the partitions.",
+    "evidence": [
+      "site_05/scene_05021"
+    ],
+    "image_path": "E:\\VS workspace\\Python Code\\Hackathone\\Dataset\\track_a_panoramas\\track_a\\panoramas\\site_05\\scene_05021\\color.png",
+    "model": "gemini-3.5-flash-lite",
+    "label_source": "vlm_pseudo",
+    "review_status": "unreviewed"
+  },
+  {
+    "claimId": "A-0054",
+    "sceneId": "site_05/scene_05043",
+    "category": "finishes",
+    "statement": "Door leafs are fitted to the core doorways.",
+    "label": "refuted",
+    "reason": "The core doorways are visible and open with no door leafs fitted.",
+    "evidence": [
+      "site_05/scene_05043"
+    ],
+    "image_path": "E:\\VS workspace\\Python Code\\Hackathone\\Dataset\\track_a_panoramas\\track_a\\panoramas\\site_05\\scene_05043\\color.png",
+    "model": "gemini-3.5-flash-lite",
+    "label_source": "vlm_pseudo",
+    "review_status": "unreviewed"
+  },
+  {
+    "claimId": "A-0055",
+    "sceneId": "site_05/scene_05043",
+    "category": "facade",
+    "statement": "This floor is weather-protected by temporary facade sheeting.",
+    "label": "supported",
+    "reason": "Temporary sheeting and wooden framing are visible along the facade openings.",
+    "evidence": [
+      "site_05/scene_05043"
+    ],
+    "image_path": "E:\\VS workspace\\Python Code\\Hackathone\\Dataset\\track_a_panoramas\\track_a\\panoramas\\site_05\\scene_05043\\color.png",
+    "model": "gemini-3.5-flash-lite",
+    "label_source": "vlm_pseudo",
+    "review_status": "unreviewed"
+  },
+  {
+    "claimId": "A-0056",
+    "sceneId": "site_05/scene_05043",
+    "category": "mep_services",
+    "statement": "Radiant ceiling panels are installed on this floor.",
+    "label": "refuted",
+    "reason": "The concrete ceiling is bare and unserviced; no radiant ceiling panels are installed.",
+    "evidence": [
+      "site_05/scene_05043"
+    ],
+    "image_path": "E:\\VS workspace\\Python Code\\Hackathone\\Dataset\\track_a_panoramas\\track_a\\panoramas\\site_05\\scene_05043\\color.png",
+    "model": "gemini-3.5-flash-lite",
+    "label_source": "vlm_pseudo",
+    "review_status": "unreviewed"
+  },
+  {
+    "claimId": "A-0057",
+    "sceneId": "site_08/scene_08000",
+    "category": "mep_services",
+    "statement": "Ventilation ductwork and cable containment are installed at the soffit.",
+    "label": "supported",
+    "reason": "Ventilation ductwork and pipe/cable containment are clearly visible installed at the concrete soffit.",
+    "evidence": [
+      "site_08/scene_08000"
+    ],
+    "image_path": "E:\\VS workspace\\Python Code\\Hackathone\\Dataset\\track_a_panoramas\\track_a\\panoramas\\site_08\\scene_08000\\color.png",
+    "model": "gemini-3.5-flash-lite",
+    "label_source": "vlm_pseudo",
+    "review_status": "unreviewed"
+  },
+  {
+    "claimId": "A-0058",
+    "sceneId": "site_08/scene_08000",
+    "category": "partitions",
+    "statement": "Drywall partitions are boarded with joints being filled.",
+    "label": "supported",
+    "reason": "Drywall partitions are boarded and joint filler/compound is visible applied over the joints and screw heads.",
+    "evidence": [
+      "site_08/scene_08000"
+    ],
+    "image_path": "E:\\VS workspace\\Python Code\\Hackathone\\Dataset\\track_a_panoramas\\track_a\\panoramas\\site_08\\scene_08000\\color.png",
+    "model": "gemini-3.5-flash-lite",
+    "label_source": "vlm_pseudo",
+    "review_status": "unreviewed"
+  },
+  {
+    "claimId": "A-0059",
+    "sceneId": "site_08/scene_08000",
+    "category": "facade",
+    "statement": "The glazed facade is installed.",
+    "label": "supported",
+    "reason": "Glazed facade elements and windows with frames and glass are clearly visible and installed.",
+    "evidence": [
+      "site_08/scene_08000"
+    ],
+    "image_path": "E:\\VS workspace\\Python Code\\Hackathone\\Dataset\\track_a_panoramas\\track_a\\panoramas\\site_08\\scene_08000\\color.png",
+    "model": "gemini-3.5-flash-lite",
+    "label_source": "vlm_pseudo",
+    "review_status": "unreviewed"
+  },
+  {
+    "claimId": "A-0060",
+    "sceneId": "site_08/scene_08000",
+    "category": "finishes",
+    "statement": "Suspended ceiling tiles are installed in this area.",
+    "label": "refuted",
+    "reason": "Suspended ceiling tiles are not installed; the concrete soffit and MEP services remain completely exposed.",
+    "evidence": [
+      "site_08/scene_08000"
+    ],
+    "image_path": "E:\\VS workspace\\Python Code\\Hackathone\\Dataset\\track_a_panoramas\\track_a\\panoramas\\site_08\\scene_08000\\color.png",
+    "model": "gemini-3.5-flash-lite",
+    "label_source": "vlm_pseudo",
+    "review_status": "unreviewed"
+  },
+  {
+    "claimId": "A-0061",
+    "sceneId": "site_08/scene_08030",
+    "category": "mep_services",
+    "statement": "The corridor soffit carries installed services (trays, conduit, duct).",
+    "label": "supported",
+    "reason": "Cable trays, conduits, and ventilation ductwork are clearly visible installed along the corridor ceiling soffit.",
+    "evidence": [
+      "site_08/scene_08030"
+    ],
+    "image_path": "E:\\VS workspace\\Python Code\\Hackathone\\Dataset\\track_a_panoramas\\track_a\\panoramas\\site_08\\scene_08030\\color.png",
+    "model": "gemini-3.5-flash-lite",
+    "label_source": "vlm_pseudo",
+    "review_status": "unreviewed"
+  },
+  {
+    "claimId": "A-0062",
+    "sceneId": "site_08/scene_08030",
+    "category": "finishes",
+    "statement": "Corridor door leafs are hung in their frames.",
+    "label": "refuted",
+    "reason": "Corridor door frames are installed, but the door leafs are missing from the visible openings.",
+    "evidence": [
+      "site_08/scene_08030"
+    ],
+    "image_path": "E:\\VS workspace\\Python Code\\Hackathone\\Dataset\\track_a_panoramas\\track_a\\panoramas\\site_08\\scene_08030\\color.png",
+    "model": "gemini-3.5-flash-lite",
+    "label_source": "vlm_pseudo",
+    "review_status": "unreviewed"
+  },
+  {
+    "claimId": "A-0063",
+    "sceneId": "site_08/scene_08030",
+    "category": "finishes",
+    "statement": "Final floor carpet has been laid in the corridor.",
+    "label": "refuted",
+    "reason": "The floor shows an unfinished surface with rough substrate or screed, not a final carpet finish.",
+    "evidence": [
+      "site_08/scene_08030"
+    ],
+    "image_path": "E:\\VS workspace\\Python Code\\Hackathone\\Dataset\\track_a_panoramas\\track_a\\panoramas\\site_08\\scene_08030\\color.png",
+    "model": "gemini-3.5-flash-lite",
+    "label_source": "vlm_pseudo",
+    "review_status": "unreviewed"
+  },
+  {
+    "claimId": "A-0064",
+    "sceneId": "site_08/scene_08030",
+    "category": "mep_services",
+    "statement": "The sprinkler main in the corridor is pressure-tested and charged.",
+    "label": "no_evidence",
+    "reason": "While pipes are visible, pressure-testing and the charged status of a sprinkler main cannot be verified visually.",
+    "evidence": [
+      "site_08/scene_08030"
+    ],
+    "image_path": "E:\\VS workspace\\Python Code\\Hackathone\\Dataset\\track_a_panoramas\\track_a\\panoramas\\site_08\\scene_08030\\color.png",
+    "model": "gemini-3.5-flash-lite",
+    "label_source": "vlm_pseudo",
+    "review_status": "unreviewed"
+  },
+  {
+    "claimId": "A-0065",
+    "sceneId": "site_09/scene_09000",
+    "category": "finishes",
+    "statement": "The ceiling has been re-boarded and skim-plastered.",
+    "label": "supported",
+    "reason": "The ceiling is visibly boarded with drywall panels and joints/screw heads are filled with skim plaster.",
+    "evidence": [
+      "site_09/scene_09000"
+    ],
+    "image_path": "E:\\VS workspace\\Python Code\\Hackathone\\Dataset\\track_a_panoramas\\track_a\\panoramas\\site_09\\scene_09000\\color.png",
+    "model": "gemini-3.5-flash-lite",
+    "label_source": "vlm_pseudo",
+    "review_status": "unreviewed"
+  },
+  {
+    "claimId": "A-0066",
+    "sceneId": "site_09/scene_09000",
+    "category": "finishes",
+    "statement": "Historic door casings are protected with film and tape.",
+    "label": "supported",
+    "reason": "Historic door casings are visibly covered and protected with protective film and blue/yellow masking tape.",
+    "evidence": [
+      "site_09/scene_09000"
+    ],
+    "image_path": "E:\\VS workspace\\Python Code\\Hackathone\\Dataset\\track_a_panoramas\\track_a\\panoramas\\site_09\\scene_09000\\color.png",
+    "model": "gemini-3.5-flash-lite",
+    "label_source": "vlm_pseudo",
+    "review_status": "unreviewed"
+  },
+  {
+    "claimId": "A-0067",
+    "sceneId": "site_09/scene_09000",
+    "category": "finishes",
+    "statement": "The brick walls have been re-plastered.",
+    "label": "refuted",
+    "reason": "The brick walls are exposed with visible masonry and mortar joints, and have not been re-plastered.",
+    "evidence": [
+      "site_09/scene_09000"
+    ],
+    "image_path": "E:\\VS workspace\\Python Code\\Hackathone\\Dataset\\track_a_panoramas\\track_a\\panoramas\\site_09\\scene_09000\\color.png",
+    "model": "gemini-3.5-flash-lite",
+    "label_source": "vlm_pseudo",
+    "review_status": "unreviewed"
+  },
+  {
+    "claimId": "A-0068",
+    "sceneId": "site_09/scene_09000",
+    "category": "mep_services",
+    "statement": "New electrical cabling is dropped in the wall chases.",
+    "label": "supported",
+    "reason": "New black electrical conduits and back-boxes are visible running down the wall chases.",
+    "evidence": [
+      "site_09/scene_09000"
+    ],
+    "image_path": "E:\\VS workspace\\Python Code\\Hackathone\\Dataset\\track_a_panoramas\\track_a\\panoramas\\site_09\\scene_09000\\color.png",
+    "model": "gemini-3.5-flash-lite",
+    "label_source": "vlm_pseudo",
+    "review_status": "unreviewed"
+  },
+  {
+    "claimId": "A-0069",
+    "sceneId": "site_09/scene_09018",
+    "category": "mep_services",
+    "statement": "New socket back-boxes are installed on the brick walls.",
+    "label": "supported",
+    "reason": "Red socket back-boxes connected to conduits are clearly visible installed on the brick walls.",
+    "evidence": [
+      "site_09/scene_09018"
+    ],
+    "image_path": "E:\\VS workspace\\Python Code\\Hackathone\\Dataset\\track_a_panoramas\\track_a\\panoramas\\site_09\\scene_09018\\color.png",
+    "model": "gemini-3.5-flash-lite",
+    "label_source": "vlm_pseudo",
+    "review_status": "unreviewed"
+  },
+  {
+    "claimId": "A-0070",
+    "sceneId": "site_09/scene_09018",
+    "category": "facade",
+    "statement": "The window in this room has been replaced with a new unit.",
+    "label": "no_evidence",
+    "reason": "While a window is visible, there is no comparative visual evidence to establish whether it is newly installed or has replaced an earlier unit.",
+    "evidence": [
+      "site_09/scene_09018"
+    ],
+    "image_path": "E:\\VS workspace\\Python Code\\Hackathone\\Dataset\\track_a_panoramas\\track_a\\panoramas\\site_09\\scene_09018\\color.png",
+    "model": "gemini-3.5-flash-lite",
+    "label_source": "vlm_pseudo",
+    "review_status": "unreviewed"
+  },
+  {
+    "claimId": "A-0071",
+    "sceneId": "site_09/scene_09018",
+    "category": "finishes",
+    "statement": "Wall plastering over the chases is complete.",
+    "label": "refuted",
+    "reason": "The brick walls and vertical electrical chases remain completely unplastered and exposed.",
+    "evidence": [
+      "site_09/scene_09018"
+    ],
+    "image_path": "E:\\VS workspace\\Python Code\\Hackathone\\Dataset\\track_a_panoramas\\track_a\\panoramas\\site_09\\scene_09018\\color.png",
+    "model": "gemini-3.5-flash-lite",
+    "label_source": "vlm_pseudo",
+    "review_status": "unreviewed"
+  },
+  {
+    "claimId": "A-0072",
+    "sceneId": "site_12/scene_12013",
+    "category": "mep_services",
+    "statement": "Ceiling electrical boxes are installed with cable tails ready.",
+    "label": "supported",
+    "reason": "Ceiling electrical boxes and associated cable tails are clearly visible hanging from the ceiling.",
+    "evidence": [
+      "site_12/scene_12013"
+    ],
+    "image_path": "E:\\VS workspace\\Python Code\\Hackathone\\Dataset\\track_a_panoramas\\track_a\\panoramas\\site_12\\scene_12013\\color.png",
+    "model": "gemini-3.5-flash-lite",
+    "label_source": "vlm_pseudo",
+    "review_status": "unreviewed"
+  },
+  {
+    "claimId": "A-0073",
+    "sceneId": "site_12/scene_12013",
+    "category": "finishes",
+    "statement": "Internal door leafs are hung.",
+    "label": "refuted",
+    "reason": "Visible doorways show only empty openings without hung door leaves.",
+    "evidence": [
+      "site_12/scene_12013"
+    ],
+    "image_path": "E:\\VS workspace\\Python Code\\Hackathone\\Dataset\\track_a_panoramas\\track_a\\panoramas\\site_12\\scene_12013\\color.png",
+    "model": "gemini-3.5-flash-lite",
+    "label_source": "vlm_pseudo",
+    "review_status": "unreviewed"
+  },
+  {
+    "claimId": "A-0074",
+    "sceneId": "site_12/scene_12013",
+    "category": "finishes",
+    "statement": "Walls are skim-plastered ready for paint.",
+    "label": "refuted",
+    "reason": "Walls show raw concrete and unfinished block masonry without skim-plaster finish.",
+    "evidence": [
+      "site_12/scene_12013"
+    ],
+    "image_path": "E:\\VS workspace\\Python Code\\Hackathone\\Dataset\\track_a_panoramas\\track_a\\panoramas\\site_12\\scene_12013\\color.png",
+    "model": "gemini-3.5-flash-lite",
+    "label_source": "vlm_pseudo",
+    "review_status": "unreviewed"
+  },
+  {
+    "claimId": "A-0075",
+    "sceneId": "site_12/scene_12013",
+    "category": "structure",
+    "statement": "The ceiling access opening has been closed and made good.",
+    "label": "refuted",
+    "reason": "Ceiling access openings are clearly open and visible with unfinished edges.",
+    "evidence": [
+      "site_12/scene_12013"
+    ],
+    "image_path": "E:\\VS workspace\\Python Code\\Hackathone\\Dataset\\track_a_panoramas\\track_a\\panoramas\\site_12\\scene_12013\\color.png",
+    "model": "gemini-3.5-flash-lite",
+    "label_source": "vlm_pseudo",
+    "review_status": "unreviewed"
+  }
+]
