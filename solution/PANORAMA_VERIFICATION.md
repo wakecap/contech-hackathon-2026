@@ -20,7 +20,8 @@
 
 ## Implemented experiment
 
-The existing default remains an overview plus four 1024×854 overlapping crops.
+The default remains an overview plus four 1024×854 overlapping crops, with only
+DeepSeek enabled. OpenAI is disabled in both configurations at the user's request.
 Its first run has 15 claims: 6 supported, 5 refuted, 4 needing review.
 
 `config.crop-trial.json` uses the same five images, claims, prompts, model settings,
@@ -38,10 +39,14 @@ The offline regression suite checks crop coverage, dimensions, seam ordering and
 pixel preservation, together with response handling and voting. All 12 tests pass.
 The experimental configuration also passes its five-image/15-claim dry run.
 
-The comparison model run has not executed: automatic approval review requested
-explicit approval for uploading the newly derived views. The prior results are
-preserved in `results/track_a_sample5/`; experimental results will use the separate
-`results/track_a_crop_trial/` directory.
+After explicit approval for the derived views, the trial completed using DeepSeek
+only: all five calls succeeded, 7 claims were supported, 7 refuted, and 1 fell below
+the confidence threshold. Across all 15 claims, DeepSeek's categorical verdicts
+were identical to its earlier wider-crop answers. Reported confidence varied;
+there is no measured accuracy improvement. The prior results are preserved in
+`results/track_a_sample5/`; trial results and the comparison are in the separate
+`results/track_a_crop_trial/` directory. Use `node compare_runs.mjs` to generate
+the comparison report.
 
 ## Limits of the comparison
 
@@ -59,5 +64,5 @@ solution\run_images.bat --config config.crop-trial.json --dry-run
 solution\run_images.bat --config config.crop-trial.json
 ```
 
-Only the last command signs in and uploads imagery. The production configuration
+Only the last command uploads imagery. The production crop size
 has not been switched to the experiment.

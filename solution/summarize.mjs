@@ -6,6 +6,7 @@ const config = JSON.parse(await readFile(join(root, 'config.json'), 'utf8'));
 const file = resolve(root, process.argv[2] || join(config.output_dir, 'latest.json'));
 const report = JSON.parse(await readFile(file, 'utf8'));
 const decisions = report.items.flatMap(i => i.decisions);
+const modelIds = [...new Set(report.items.flatMap(i => i.records.map(r => r.modelId)))];
 const totals = {};
 let citations = 0;
 for (const item of report.items) {
@@ -22,14 +23,14 @@ const lines = [`# Five-image model trial`, '',
   `${report.items.length} panoramas; ${decisions.length} claims. One configured pass per model.`, '',
   `Results: ${Object.entries(totals).map(([key, n]) => `${n} ${key}`).join(', ')}.`, '',
   'These are model decisions and agreement scores, not accuracy against the private answer key.', '',
-  '| Claim | Statement | Luna (confidence) | DeepSeek (confidence) | Final |',
-  '|---|---|---|---|---|'];
+  `| Claim | Statement | ${modelIds.map(id => `${id} (confidence)`).join(' | ')} | Final |`,
+  `|${Array(modelIds.length + 3).fill('---').join('|')}|`];
 for (const item of report.items) for (const d of item.decisions) {
   const vote = id => item.records.filter(r => r.modelId === id).map(r => {
     const v = r.decisions.find(x => x.claimId === d.claimId);
     return v ? `${v.verdict} (${Math.round(v.confidence * 100)}%)` : 'missing';
   }).join('; ');
-  lines.push(`| ${clean(d.claimId)} | ${clean(d.statement)} | ${vote('luna')} | ${vote('deepseek')} | ${d.verdict || d.status} |`);
+  lines.push(`| ${clean(d.claimId)} | ${clean(d.statement)} | ${modelIds.map(vote).join(' | ')} | ${d.verdict || d.status} |`);
 }
 lines.push('', '## Evidence and review notes', '');
 for (const item of report.items) {

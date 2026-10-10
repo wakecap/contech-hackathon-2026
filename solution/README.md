@@ -1,8 +1,8 @@
 # Prove It — batch vision runner
 
-Run `solution\run_images.bat`. Requires Node.js 22+ and npm (already available on this laptop). The first run installs the locked dependencies, opens **Continue with ChatGPT**, and asks you to authorize this app's ChatGPT plan usage. Subsequent runs reuse the saved connection and refresh it when needed.
+Run `solution\run_images.bat`. Requires Node.js 22+ and npm (already available on this laptop). The first run installs the locked dependencies and calls the enabled providers. If you re-enable Luna, its first use opens **Continue with ChatGPT** for plan authorization; subsequent uses reuse and refresh the saved connection.
 
-The default configuration uses **GPT-6 Luna through the OpenAI SDK with subscription OAuth**, not an API key. Eligibility and available models are checked against the signed-in account. If access is unavailable or your allowance is exhausted, the runner fails visibly; it never switches to paid API billing automatically. You still need to complete the browser sign-in yourself.
+The current default uses **DeepSeek only**, with the key in your ignored `.env` file. OpenAI is disabled in both configurations at the user's request. Optional Luna support uses the OpenAI SDK with subscription OAuth; when enabled, eligibility and models are checked against the signed-in account. It never switches to paid OpenAI API billing automatically.
 
 Credentials are encrypted with Windows DPAPI in `solution/.local/chatgpt.dpapi`, bound to your Windows user. This directory and `.env` are excluded from Git. No existing Codex credentials are read. One runner at a time avoids refresh-token races. After an interrupted process, remove `.local/runner.lock` only after confirming the runner is no longer running.
 
@@ -24,6 +24,22 @@ were supported, 5 refuted, and 4 flagged for review. These counts measure model
 agreement, not accuracy. Run `node summarize.mjs` to generate `review.md` beside
 the results JSON. Successful passes are cached; a normal rerun reuses them.
 Use `--fresh` only when deliberately requesting new model calls.
+
+The subsequent `config.crop-trial.json` run used only DeepSeek with five
+768-pixel crops plus a seam crop and overview. All five calls succeeded: 7
+supported, 7 refuted, and 1 requiring review. DeepSeek's 15 categorical verdicts
+were unchanged from the earlier wider-crop run; confidence varied. This does
+not establish an accuracy improvement. Keep the narrower crops as an optional
+configuration until evaluated against independent labels.
+
+```bat
+solution\run_images.bat --config config.crop-trial.json
+node solution\summarize.mjs results/track_a_crop_trial/latest.json
+node solution\compare_runs.mjs
+```
+
+The comparison and local results remain ignored by Git. The team code is
+published privately at [OhSalad/contech-hackathon-2026](https://github.com/OhSalad/contech-hackathon-2026).
 
 Regenerate this batch with `node prepare_sample.mjs`. For a full run, use the
 actual pack location and `panorama_strip` rather than the generic 2:1 settings

@@ -12,7 +12,7 @@
       "provider": "openai",
       "auth": "subscription",
       "model": "gpt-6-luna",
-      "enabled": true,
+      "enabled": false,
       "passes": 1,
       "weight": 1,
       "reasoning_effort": "medium"
