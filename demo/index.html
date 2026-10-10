@@ -1,0 +1,173 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Hackathon — Image review</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header class="topbar">
+  <div class="model-switch" aria-label="Model results">
+    <button id="showLuna" aria-pressed="false">Luna results</button>
+    <button id="showDeepseek" aria-pressed="false">DeepSeek results</button>
+  </div>
+  <div class="topmeta" id="topMeta"></div>
+  <label class="run-picker">Saved run <select id="runSelect" aria-label="Saved run"></select></label>
+  <div class="search">
+    <svg viewBox="0 0 16 16" width="14" height="14" aria-hidden="true"><path fill="currentColor" d="M7 2a5 5 0 1 0 3.03 8.97l3.28 3.29 1.06-1.06-3.29-3.28A5 5 0 0 0 7 2Zm0 1.5A3.5 3.5 0 1 1 3.5 7 3.5 3.5 0 0 1 7 3.5Z"/></svg>
+    <input id="search" type="search" placeholder="Search claims, scenes, categories" autocomplete="off">
+    <kbd>/</kbd>
+  </div>
+</header>
+<div id="modelCoverage" class="model-coverage" role="status"></div>
+<div class="scan-actions"><button class="ghost-btn" id="rerunImages">Rerun images</button><span id="scanStatus" role="status"></span></div>
+<dialog id="scanDialog" class="scan-dialog">
+  <form id="scanForm">
+    <h2>Rerun images</h2><p>Select scenes to analyse again. All claims for each selected scene will be checked.</p>
+    <label>Model <select id="scanModel"><option value="luna">Luna</option><option value="deepseek">DeepSeek</option></select></label>
+    <label>Reasoning <select id="scanReasoning"></select></label>
+    <label>Passes per scene <input id="scanPasses" type="number" min="1" max="5" value="1"></label>
+    <label class="scan-all"><input type="checkbox" id="scanAll"> Select all</label>
+    <div id="scanScenes" class="scan-scenes"></div><p id="scanEstimate"></p>
+    <p class="dim">This sends selected images for fresh model analysis. DeepSeek uses API billing; Luna uses the configured subscription.</p>
+    <p id="scanError" role="alert"></p>
+    <div class="scan-buttons"><button type="button" id="scanCancel" class="ghost-btn">Cancel</button><button type="submit" id="scanStart" class="ghost-btn">Start scan</button></div>
+  </form>
+</dialog>
+
+<section class="kpis" id="kpiRow"></section>
+
+<nav class="secnav" id="secNav">
+  <a href="#sec-overview" class="on">Overview</a>
+  <a href="#sec-categories">Categories</a>
+  <a href="#sec-scenes">Scenes</a>
+  <a href="#sec-issues">Issues <em id="issueCount"></em></a>
+  <span class="nav-underline" id="navUnderline"></span>
+</nav>
+
+<main>
+  <section id="sec-overview" class="sec">
+    <div class="sec-head"><h2>Overview</h2></div>
+    <div class="overview-grid">
+      <div class="panel" id="outcomePanel"></div>
+      <div class="panel" id="throughputPanel"></div>
+      <div class="panel" id="modelPanel"></div>
+    </div>
+  </section>
+
+  <section id="sec-categories" class="sec">
+    <div class="sec-head"><h2>Categories</h2><span class="sec-meta" id="catMeta"></span></div>
+    <div class="panel flush" id="categoryPanel"></div>
+  </section>
+
+<section id="sec-scenes" class="sec">
+    <div class="sec-head"><h2>Scenes</h2><span class="sec-meta" id="sceneMeta"></span></div>
+    <div class="filters" id="filters"></div>
+    <div class="scene-grid" id="sceneGrid"></div>
+  </section>
+
+  <section id="sec-issues" class="sec">
+    <div class="sec-head"><h2>Model flags</h2><span class="sec-meta" id="issueMeta"></span></div>
+    <div class="panel flush" id="issuePanel"></div>
+  </section>
+
+  <footer class="foot">
+    <span id="footMeta"></span>
+    <span class="dim">Model confidence is self-reported; accuracy is not measured.</span>
+  </footer>
+</main>
+
+<!-- ───────────────────────── scene viewer ───────────────────────── -->
+<div class="overlay" id="sceneOverlay" hidden>
+  <div class="overlay-scrim" data-close></div>
+  <div class="scene-view" role="dialog" aria-modal="true">
+    <header class="sv-head">
+      <button class="icon-btn" data-close aria-label="Close">
+        <svg viewBox="0 0 16 16" width="15" height="15"><path fill="currentColor" d="M6.7 8 2.2 3.5 3.5 2.2 8 6.7l4.5-4.5 1.3 1.3L9.3 8l4.5 4.5-1.3 1.3L8 9.3l-4.5 4.5-1.3-1.3L6.7 8Z"/></svg>
+      </button>
+      <div class="sv-title">
+        <h3 id="svTitle"></h3>
+        <div class="sv-sub" id="svSub"></div>
+      </div>
+      <div class="sv-tools">
+        <div class="issue-nav" id="issueNav" hidden aria-label="Issue navigation">
+          <button class="ghost-btn" id="previousIssue" aria-label="Previous issue" aria-keyshortcuts="ArrowLeft" title="Previous issue (Left arrow)">←</button>
+          <span id="issuePosition" role="status" aria-live="polite"></span>
+          <button class="ghost-btn" id="nextIssue" aria-label="Next issue" aria-keyshortcuts="ArrowRight" title="Next issue (Right arrow)">→</button>
+        </div>
+        <button class="ghost-btn" id="svFit">Fit</button>
+        <button class="ghost-btn" id="svFull">1:1</button>
+        <div class="seg" id="svMode">
+          <button data-mode="panorama" class="on">Panorama</button>
+          <button data-mode="breakdown">Breakdown</button>
+        </div>
+      </div>
+    </header>
+
+    <div class="sv-body">
+      <div class="sv-stage">
+        <div class="pano-wrap" id="panoWrap">
+          <canvas id="pano"></canvas>
+          <div class="pano-hint" id="panoHint">drag to pan · scroll to zoom</div>
+          <div class="zoom-readout" id="zoomReadout">100%</div>
+        </div>
+        <div class="minimap" id="minimapWrap">
+          <canvas id="minimap"></canvas>
+          <div class="minimap-legend" id="minimapLegend"></div>
+        </div>
+        <div class="breakdown" id="breakdown" hidden></div>
+      </div>
+
+      <aside class="sv-rail">
+        <div class="rail-head">
+          <span>Claims</span>
+          <div class="rail-filter" id="railFilter"></div>
+        </div>
+        <div class="claim-list" id="claimList"></div>
+      </aside>
+    </div>
+
+    <footer class="sv-foot">
+      <div class="viewstrip" id="viewStrip"></div>
+    </footer>
+  </div>
+</div>
+
+<!-- ───────────────────────── lightbox ───────────────────────── -->
+<div class="lightbox" id="lightbox" hidden>
+  <div class="lb-scrim"></div>
+  <header class="lb-head">
+    <div class="lb-title">
+      <h4 id="lbName"></h4>
+      <div id="lbRegion" class="dim"></div>
+    </div>
+    <div class="lb-tools">
+      <button class="icon-btn" id="lbZoomOut" aria-label="Zoom out">
+        <svg viewBox="0 0 16 16" width="15" height="15"><path fill="currentColor" d="M3 7.25h10v1.5H3z"/></svg>
+      </button>
+      <span class="zoom-readout" id="lbZoom">100%</span>
+      <button class="icon-btn" id="lbZoomIn" aria-label="Zoom in">
+        <svg viewBox="0 0 16 16" width="15" height="15"><path fill="currentColor" d="M7.25 3h1.5v4.25H13v1.5H8.75V13h-1.5V8.75H3v-1.5h4.25z"/></svg>
+      </button>
+      <button class="icon-btn" id="lbClose" aria-label="Close">
+        <svg viewBox="0 0 16 16" width="15" height="15"><path fill="currentColor" d="M6.7 8 2.2 3.5 3.5 2.2 8 6.7l4.5-4.5 1.3 1.3L9.3 8l4.5 4.5-1.3 1.3L8 9.3l-4.5 4.5-1.3-1.3L6.7 8Z"/></svg>
+      </button>
+    </div>
+  </header>
+  <div class="lb-stage"><canvas id="lbCanvas"></canvas></div>
+  <button class="lb-nav prev" id="lbPrev" aria-label="Previous">
+    <svg viewBox="0 0 16 16" width="18" height="18"><path fill="currentColor" d="M10.3 2.3 4.6 8l5.7 5.7 1.1-1.1L6.8 8l4.6-4.6z"/></svg>
+  </button>
+  <button class="lb-nav next" id="lbNext" aria-label="Next">
+    <svg viewBox="0 0 16 16" width="18" height="18"><path fill="currentColor" d="M5.7 2.3 11.4 8l-5.7 5.7-1.1-1.1L9.2 8 4.6 3.4z"/></svg>
+  </button>
+  <footer class="lb-foot"><div class="lb-strip" id="lbStrip"></div></footer>
+</div>
+
+<script src="data.js"></script>
+<script src="model-results.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
