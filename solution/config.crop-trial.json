@@ -5,7 +5,7 @@
   "image_projection": "panorama_strip",
   "face_size": 768,
   "max_image_edge": 2048,
-  "team": "TEAM_NAME",
+  "team": "Team 4",
   "models": [
     {
       "id": "luna",
@@ -29,7 +29,8 @@
   "aggregation": {
     "minimum_winner_share": 0.6,
     "minimum_margin": 0.15,
-    "minimum_winner_points": 60
+    "minimum_winner_points": 60,
+    "accept_low_confidence": true
   },
   "request_timeout_seconds": 180,
   "retries": 2,
@@ -53,5 +54,6 @@
   ],
   "crop_width": 768,
   "crop_overlap": 0.25,
-  "include_seam_crop": true
+  "include_seam_crop": true,
+  "grading_page": false
 }

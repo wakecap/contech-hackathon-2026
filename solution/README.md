@@ -1,4 +1,4 @@
-# Prove It — batch vision runner
+# Hackathon — batch vision runner
 
 Run `solution\run_images.bat`. Requires Node.js 22+ and npm (already available on this laptop). The first run installs the locked dependencies and calls the enabled providers. If you re-enable Luna, its first use opens **Continue with ChatGPT** for plan authorization; subsequent uses reuse and refresh the saved connection.
 
@@ -95,11 +95,24 @@ To enable DeepSeek:
 1. Copy `.env.example` to `.env` and fill `DEEPSEEK_API_KEY` (or supply it through your environment).
 2. Set the DeepSeek entry's `enabled` to `true`, and choose its `passes` and `weight`.
 
-The adapter sends the **same images and claims** through the OpenAI SDK's compatible Chat Completions client. Its default model is `deepseek-flash`, documented as image-capable by [DeepSeek](https://api-docs.deepseek.com/guides/vision/). It does not receive Luna's answer. DeepSeek's key and live model access remain to be tested. It uses separate API billing, not your ChatGPT subscription.
+The adapter sends the **same images and claims** through the OpenAI SDK's compatible Chat Completions client. Its default model is `deepseek-flash`, documented as image-capable by [DeepSeek](https://api-docs.deepseek.com/guides/vision/). It does not receive Luna's answer. It uses separate API billing, not your ChatGPT subscription.
 
-This checkout now has DeepSeek enabled and its key saved in the ignored `.env` file. API access still needs a successful live request.
+This checkout has DeepSeek enabled and its key saved in the ignored `.env` file. The full prepared-view run completed successfully with 24 API calls and 75 claims. The request and response model name is `deepseek-flash`; [DeepSeek's changelog](https://api-docs.deepseek.com/updates/) identifies this alias as V4.1 Flash with native vision, replacing the earlier experimental V4 vision endpoint.
 
-Scoring for each claim:
+## Full run and submission
+
+Use the website via demo/start_viewer.bat or run solution/run_images.bat --config config.full.json. This reads the existing JPEG overview and detail crops for the 24 scenes containing all 75 claims. Model outputs are predictions; no answer key or accuracy score is available. The earlier experimental grader and provisional AI labels are not used in the submission workflow.
+
+Generate the organiser's JSON from the latest DeepSeek results per claim, including partial reruns:
+
+```bat
+node solution/export_submission.mjs
+python scripts/check_submission.py submissions/Team_4/submission.json
+```
+
+The file contains team, all 75 Track A entries, and empty optional Track B. Decisive answers cite original official panorama paths, not JPEG crop paths. Website DeepSeek reruns refresh this file automatically when all claims have complete results. Failed or missing results block export and preserve the previous file. Submission format is defined by ../SUBMISSION.md.
+
+Confidence aggregation for each claim:
 
 ```
 pass points = 100 × confidence, awarded to that pass's chosen verdict
@@ -109,7 +122,13 @@ winner share = winner points / sum(points across all three verdicts)
 margin = (winner points − runner-up points) / sum(points)
 ```
 
-Defaults require winner share ≥0.60, margin ≥0.15, and winner points ≥60. Otherwise the result is `needs_review` with a null verdict. These are **starting heuristics**, to tune against a labelled development set. Reported confidence and winner share are not calibrated correctness probabilities. Additional passes do not increase one model's voting weight.
+The current configurations emit the strongest confidence-weighted legal answer even below the thresholds (accept_low_confidence=true). Thresholds mark low confidence for optional reruns; they do not withhold answers or require human checking. Failed/incomplete provider responses remain errors. Additional passes do not increase one model's voting weight.
+
+An optional `aggregation.minimum_vote_share` (the viewer uses 0.60) additionally requires enough categorical votes for the confidence-weighted winner. Votes are averaged within each model before model weights are applied. This flags a high-confidence minority rather than silently accepting it. Duplicate/missing pass numbers are rejected. These safeguards do not establish an accuracy improvement without independent evaluation.
+
+The three model verdicts exactly match `SUBMISSION.md`: `supported`, `refuted`, `no_evidence`. Review/error/pending are internal statuses. Decisive answers need scene-valid citations; no evidence does not. Prompt wording now explicitly covers compound claims, hidden properties and operational claims such as pressure-tested or charged. Existing saved results predate that prompt update.
+
+Official correctness is assessed against the organiser's private key. The website shows model outcomes and self-reported confidence only; it does not calculate accuracy or a competition score.
 
 `no_evidence` is a genuine model verdict about visibility. Failed/malformed/incomplete responses produce `error`, not `no_evidence`. Every configured pass must succeed before aggregation. All individual observations, confidence values, scores, disagreement, errors, and available token usage are saved.
 

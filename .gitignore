@@ -11,7 +11,13 @@ __pycache__/
 node_modules/
 solution/.local/
 solution/results/
+solution/run_history/
 solution/.env
 solution/batches/
 
 solution/_tiles_test/
+
+# demo imagery is derived from the site scans and must never be committed
+demo/assets/
+demo/data.js
+demo/model-results.js

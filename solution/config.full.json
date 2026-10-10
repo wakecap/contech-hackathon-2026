@@ -1,0 +1,58 @@
+{
+  "mode": "prepared_views",
+  "input_dir": "../demo/assets/views",
+  "output_dir": "results/track_a_full",
+  "image_projection": "panorama_strip",
+  "face_size": 768,
+  "max_image_edge": 2048,
+  "team": "Team 4",
+  "models": [
+    {
+      "id": "luna",
+      "provider": "openai",
+      "auth": "subscription",
+      "model": "gpt-6-luna",
+      "enabled": false,
+      "passes": 1,
+      "weight": 1,
+      "reasoning_effort": "medium"
+    },
+    {
+      "id": "deepseek",
+      "provider": "deepseek",
+      "model": "deepseek-flash",
+      "enabled": true,
+      "reasoning_effort": "high",
+      "passes": 1,
+      "weight": 1
+    }
+  ],
+  "aggregation": {
+    "accept_low_confidence": true,
+    "minimum_winner_share": 0.6,
+    "minimum_margin": 0.15,
+    "minimum_winner_points": 60
+  },
+  "request_timeout_seconds": 180,
+  "retries": 2,
+  "default_claims": [
+    {
+      "claimId": "windows",
+      "statement": "Windows are installed."
+    },
+    {
+      "claimId": "plaster",
+      "statement": "Internal walls are fully plastered."
+    },
+    {
+      "claimId": "doors",
+      "statement": "Internal door leaves are hung."
+    },
+    {
+      "claimId": "ductwork",
+      "statement": "Ceiling-mounted ventilation ductwork is installed."
+    }
+  ],
+  "concurrency": 3,
+  "grading_page": false
+}

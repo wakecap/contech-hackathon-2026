@@ -24,25 +24,37 @@ export function validateDecisions(value, claims, viewNames) {
 export function aggregate(claimId, models, records, policy) {
   const scores = Object.fromEntries(VERDICTS.map(v => [v, 0]));
   const perModel = [];
+  const votes = Object.fromEntries(VERDICTS.map(v => [v, 0]));
   let totalWeight = 0;
   for (const model of models) {
-    const passes = records.filter(r => r.modelId === model.id).map(r => r.decisions.find(d => d.claimId === claimId));
-    if (passes.length !== model.passes || passes.some(d => !d))
+    const selected = records.filter(r => r.modelId === model.id);
+    const passes = selected.map(r => r.decisions.find(d => d.claimId === claimId));
+    if (passes.length !== model.passes || passes.some(d => !d) ||
+        new Set(selected.map(r=>r.pass)).size !== model.passes ||
+        selected.some(r=>!Number.isInteger(r.pass)||r.pass<1||r.pass>model.passes))
       return { claimId, status: 'error', verdict: null, reason: 'One or more configured passes failed; rerun to resume.' };
     const points = Object.fromEntries(VERDICTS.map(v => [v, 0]));
-    for (const d of passes) points[d.verdict] += 100 * d.confidence / model.passes;
+    for (const d of passes) {
+      points[d.verdict] += 100 * d.confidence / model.passes;
+      votes[d.verdict] += model.weight / model.passes;
+    }
     for (const v of VERDICTS) scores[v] += points[v] * model.weight;
     totalWeight += model.weight;
     perModel.push({ modelId: model.id, points });
   }
   for (const v of VERDICTS) scores[v] /= totalWeight;
+  for (const v of VERDICTS) votes[v] /= totalWeight;
   const ranked = [...VERDICTS].sort((a, b) => scores[b] - scores[a]);
   const sum = Object.values(scores).reduce((a, b) => a + b, 0);
   const winnerShare = sum ? scores[ranked[0]] / sum : 0;
   const margin = sum ? (scores[ranked[0]] - scores[ranked[1]]) / sum : 0;
   const review = winnerShare < policy.minimum_winner_share || margin < policy.minimum_margin ||
-    scores[ranked[0]] < (policy.minimum_winner_points ?? 0);
-  return { claimId, status: review ? 'needs_review' : 'ok', verdict: review ? null : ranked[0],
+    scores[ranked[0]] < (policy.minimum_winner_points ?? 0) ||
+    votes[ranked[0]] < (policy.minimum_vote_share ?? 0);
+  const withhold = review && !policy.accept_low_confidence;
+  return { claimId, status: withhold ? 'needs_review' : 'ok', verdict: withhold ? null : ranked[0],
+    low_confidence: review,
     leading_verdict: ranked[0], scores, winner_share: winnerShare, margin, per_model: perModel,
+    vote_share: votes[ranked[0]], votes, model_count: models.length, pass_count: records.length,
     score_meaning: 'Confidence-weighted agreement; not a calibrated probability of correctness.' };
 }

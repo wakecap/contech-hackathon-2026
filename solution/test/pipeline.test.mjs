@@ -6,14 +6,94 @@ import { join } from 'node:path';
 import sharp from 'sharp';
 import { aggregate, validateDecisions } from '../voting.mjs';
 import { prepareImage } from '../images.mjs';
-import { runBatch, buildJobs, validateConfig } from '../runner.mjs';
+import { runBatch, buildJobs, validateConfig, jobViews } from '../runner.mjs';
 import { inspect, consumeResponseStream, parseDecisionJSON } from '../providers.mjs';
 import { SubscriptionAuth } from '../auth.mjs';
+import { archiveRuns, runTime } from '../run_history.mjs';
+import { buildDataset } from '../../demo/model_results.mjs';
+import { submissionFromDataset } from '../export_submission.mjs';
 
 const claim = { claimId: 'c', statement: 'A window is depicted.' };
 const decision = (verdict, confidence = .8) => ({ claimId: 'c', verdict, confidence, observation: 'Visible test evidence.', views: ['image'], limitation: '' });
 const record = (modelId, pass, verdict, confidence) => ({ modelId, model: modelId, pass, decisions: [decision(verdict, confidence)] });
 const policy = { minimum_winner_share: .6, minimum_margin: .15 };
+
+test('submission follows latest partial reruns and uses original scene citations', () => {
+  const claims=[{...claim,sceneId:'scene'},{...claim,claimId:'d',sceneId:'scene2'}];
+  const make=(id,rows)=>({run_id:id,models:[{id:'deepseek',passes:1}],items:[{records:[{modelId:'deepseek',pass:1,decisions:rows}],decisions:rows,images:['preview.jpg']}]});
+  const old=make('old',[decision('supported'),{...decision('no_evidence'),claimId:'d'}]);
+  const newer=make('new',[decision('refuted',.3)]);
+  const dataset=buildDataset('deepseek',[newer,old],claims,{run_id:'',grades:{}},{...policy,minimum_winner_points:60});
+  const scenes=[{sceneId:'scene',panoramas:['site/scene/color.png']},{sceneId:'scene2',panoramas:['site/scene2/color.png']}];
+  const submission=submissionFromDataset(dataset,claims,scenes,'Team 4');
+  assert.equal(submission.track_a[0].verdict,'refuted');
+  assert.deepEqual(submission.track_a[0].evidence,['site/scene/color.png']);
+  assert.equal(submission.track_a[1].verdict,'no_evidence');
+  assert.ok(!('evidence' in submission.track_a[1]));
+  assert.equal(dataset.claims[0].low_confidence,true);
+  assert.deepEqual(submission.track_b,[]);
+  const incomplete=buildDataset('deepseek',[newer],claims,{run_id:'',grades:{}},policy);
+  assert.throws(()=>submissionFromDataset(incomplete,claims,scenes,'Team 4'),/Missing complete/);
+  const failed=make('failed',[]);failed.items[0].decisions=[{claimId:'c'}];
+  const errors=buildDataset('deepseek',[failed,old],claims,{run_id:'',grades:{}},policy);
+  assert.throws(()=>submissionFromDataset(errors,claims,scenes,'Team 4'),/Missing complete/);
+});
+
+test('saved runs remain isolated while current results combine latest per claim', () => {
+  const c1={claimId:'c',sceneId:'scene',statement:'One'},c2={claimId:'d',sceneId:'scene2',statement:'Two'};
+  const make=(id,effort,rows)=>({run_id:id,models:[{id:'deepseek',passes:1,reasoning_effort:effort}],aggregation:policy,items:[{records:[{modelId:'deepseek',pass:1,decisions:rows}],decisions:rows,images:['scene/color.png']}]});
+  const old=make('2026-10-10T09-00-00.000Z','low',[decision('supported'),{...decision('refuted'),claimId:'d'}]);
+  const newer=make('2026-10-10T10-00-00.000Z','high',[decision('refuted')]);
+  const reference={run_id:'ref',grades:{c:{truth:'supported'},d:{truth:'refuted'}}};
+  const current=buildDataset('deepseek',[newer,old],[c1,c2],reference,policy);
+  const snapshot=buildDataset('deepseek',[newer],[c1,c2],reference,policy);
+  assert.equal(current.claims[0].verdict,'refuted');assert.equal(current.claims[1].verdict,'refuted');
+  assert.equal(current.reasoning_level,'mixed');assert.equal(snapshot.reasoning_level,'high');
+  assert.equal(snapshot.claims[1].status,'pending');assert.equal(Object.keys(snapshot.grading.grades).length,1);
+  assert.ok(runTime(newer.run_id)>runTime(old.run_id));
+});
+
+test('history deduplicates latest/timestamp reports and survives latest replacement', async () => {
+  const dir=await mkdtemp(join(tmpdir(),'prove-it-history-')),results=join(dir,'results'),history=join(dir,'history');
+  await mkdir(join(results,'batch'),{recursive:true});
+  try {
+    const old={run_id:'2026-10-10T09-00-00.000Z',items:[{id:'old'}]},next={run_id:'2026-10-10T10-00-00.000Z',items:[{id:'new'}]};
+    await writeFile(join(results,'batch','latest.json'),JSON.stringify(old));
+    await writeFile(join(results,'batch',old.run_id+'.json'),JSON.stringify(old));
+    assert.equal((await archiveRuns(results,history)).length,1);
+    await writeFile(join(results,'batch','latest.json'),JSON.stringify(next));
+    const saved=await archiveRuns(results,history);assert.deepEqual(saved.map(r=>r.run_id),[next.run_id,old.run_id]);
+  } finally {await rm(dir,{recursive:true,force:true});}
+});
+
+test('a confident minority cannot pass the optional vote-consistency gate', () => {
+  const models=[{id:'a',passes:3,weight:1}];
+  const rows=[record('a',1,'supported',.99),record('a',2,'refuted',.2),record('a',3,'refuted',.2)];
+  const result=aggregate('c',models,rows,{...policy,minimum_vote_share:.6});
+  assert.equal(result.leading_verdict,'supported');assert.equal(result.vote_share,1/3);
+  assert.equal(result.status,'needs_review');
+  assert.equal(aggregate('c',models,[rows[0],rows[0],rows[2]],policy).status,'error');
+});
+
+test('submission policy emits the strongest legal answer at low confidence without hiding failures', () => {
+  const models=[{id:'a',passes:1,weight:1}];
+  const p={...policy,minimum_winner_points:60,accept_low_confidence:true};
+  const result=aggregate('c',models,[record('a',1,'refuted',.3)],p);
+  assert.equal(result.status,'ok');assert.equal(result.verdict,'refuted');assert.equal(result.low_confidence,true);
+  assert.equal(aggregate('c',models,[],p).status,'error');
+});
+
+test('DeepSeek reasoning settings reach the SDK request', async () => {
+  const old=process.env.DEEPSEEK_API_KEY;process.env.DEEPSEEK_API_KEY='test-placeholder';
+  try {
+    for(const effort of ['none','low','high','max']) {
+      let body;
+      await inspect({id:'deepseek',provider:'deepseek',model:'deepseek-flash',reasoning_effort:effort},[claim],[{name:'image',url:'data:image/png;base64,test'}],1,{request_timeout_seconds:10},null,()=>({chat:{completions:{create:async value=>{body=value;return {model:'deepseek-flash',choices:[{finish_reason:'stop',message:{content:JSON.stringify({decisions:[decision('supported')]})}}]};}}}}));
+      assert.equal(body.thinking.type,effort==='none'?'disabled':'enabled');
+      assert.equal(body.reasoning_effort,effort==='none'?undefined:effort);
+    }
+  } finally { if(old===undefined)delete process.env.DEEPSEEK_API_KEY;else process.env.DEEPSEEK_API_KEY=old; }
+});
 
 test('recovers streamed text when completed event omits its message body', async () => {
   const text = JSON.stringify({ decisions: [decision('supported')] });
@@ -178,5 +258,30 @@ test('batch execution caches passes, resumes failures and invalidates changed im
     await writeFile(join(input, 'claims.json'), JSON.stringify({ claims: [{ ...claim, image: 'missing.png' }] }));
     await assert.rejects(buildJobs(config, input));
     assert.throws(() => validateConfig({ ...config, models: [{ ...config.models[0], passes: 0 }] }));
+  } finally { await rm(dir, { recursive: true, force: true }); }
+});
+test('prepared views are sent byte-for-byte and concurrent jobs checkpoint completely', async () => {
+  const dir = await mkdtemp(join(tmpdir(), 'prove-it-prepared-'));
+  try {
+    const file = join(dir, 'overview.jpg');
+    await sharp({ create: { width: 20, height: 12, channels: 3, background: 'blue' } }).jpeg().toFile(file);
+    const config = JSON.parse(await readFile(new URL('../config.json', import.meta.url)));
+    config.concurrency = 3; config.retries = 0;
+    const jobs = ['one', 'two', 'three'].map(id => ({ id, images: [file], citations: [`${id}/color.png`],
+      prepared_views: [{ name: 'image', file }], claims: [claim] }));
+    const views = await jobViews(jobs[0], config);
+    assert.deepEqual(Buffer.from(views[0].url.split(',')[1], 'base64'), await readFile(file));
+    let active = 0, maximum = 0;
+    const mock = async (m, c, v, p) => {
+      active++; maximum = Math.max(maximum, active);
+      await new Promise(resolve => setTimeout(resolve, 20)); active--;
+      return record(m.id, p, 'supported', .9);
+    };
+    const output = join(dir, 'results');
+    await runBatch(config, jobs, [{ id: 'a', model: 'a', passes: 1, weight: 1 }], output, null, { mock: true }, mock);
+    assert.equal(maximum, 3);
+    const result = JSON.parse(await readFile(join(output, 'latest.json')));
+    assert.deepEqual(result.items.map(i => i.id), ['one', 'two', 'three']);
+    assert.equal(result.items[0].view_manifest[0].file, file);
   } finally { await rm(dir, { recursive: true, force: true }); }
 });
