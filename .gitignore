@@ -1,5 +1,6 @@
 # imagery is distributed via the shared drive, never via git
 data/track_a/panoramas/
+/track_a/panoramas/
 data/track_b/frames/
 *.zip
 
@@ -7,3 +8,10 @@ data/track_b/frames/
 __pycache__/
 *.pyc
 .venv/
+node_modules/
+solution/.local/
+solution/results/
+solution/.env
+solution/batches/
+
+solution/_tiles_test/

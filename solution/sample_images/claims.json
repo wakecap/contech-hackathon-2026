@@ -1,0 +1,7 @@
+{
+  "claims": [
+    { "claimId": "sample-window", "image": "sample.png", "statement": "A blue window with a white frame is depicted." },
+    { "claimId": "sample-door", "image": "sample.png", "statement": "A door is depicted in the wall." },
+    { "claimId": "sample-hidden", "image": "sample.png", "statement": "Electrical wiring is installed inside the wall." }
+  ]
+}
