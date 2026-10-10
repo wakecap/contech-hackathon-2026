@@ -1,0 +1,588 @@
+{
+  "team": "Team 3",
+  "track_a": [
+    {
+      "claimId": "A-0001",
+      "verdict": "supported",
+      "rationale": "Windows and balcony doors with frames and glazing are clearly visible installed in the openings.",
+      "evidence": [
+        "site_00/scene_00000/color.png"
+      ]
+    },
+    {
+      "claimId": "A-0002",
+      "verdict": "refuted",
+      "rationale": "The internal walls show exposed, rough structural concrete with formwork and joint lines rather than an applied plaster finish.",
+      "evidence": [
+        "site_00/scene_00000/color.png"
+      ]
+    },
+    {
+      "claimId": "A-0003",
+      "verdict": "refuted",
+      "rationale": "No electrical socket back-boxes are visible roughed into the walls; only raw concrete surfaces and some conduits/sleeves near the floor are present.",
+      "evidence": [
+        "site_00/scene_00000/color.png"
+      ]
+    },
+    {
+      "claimId": "A-0004",
+      "verdict": "refuted",
+      "rationale": "The floor consists of a rough structural concrete slab with surface marks and debris, showing no separate applied screed layer.",
+      "evidence": [
+        "site_00/scene_00000/color.png"
+      ]
+    },
+    {
+      "claimId": "A-0005",
+      "verdict": "supported",
+      "rationale": "Windows with frames and glazing are clearly visible installed in the external brick wall openings.",
+      "evidence": [
+        "site_00/scene_00006/color.png"
+      ]
+    },
+    {
+      "claimId": "A-0006",
+      "verdict": "refuted",
+      "rationale": "The brick external wall remains exposed and clearly lacks any applied internal plaster layer.",
+      "evidence": [
+        "site_00/scene_00006/color.png"
+      ]
+    },
+    {
+      "claimId": "A-0007",
+      "verdict": "refuted",
+      "rationale": "No ceiling-mounted ventilation ductwork is visible on the exposed concrete ceiling slabs.",
+      "evidence": [
+        "site_00/scene_00006/color.png"
+      ]
+    },
+    {
+      "claimId": "A-0008",
+      "verdict": "refuted",
+      "rationale": "The visible internal door openings show frames or bare concrete reveals, but no door leafs are hung.",
+      "evidence": [
+        "site_00/scene_00012/color.png"
+      ]
+    },
+    {
+      "claimId": "A-0009",
+      "verdict": "refuted",
+      "rationale": "Windows with frames and glazing are visibly installed in the exterior openings.",
+      "evidence": [
+        "site_00/scene_00012/color.png"
+      ]
+    },
+    {
+      "claimId": "A-0010",
+      "verdict": "supported",
+      "rationale": "The concrete roof slab above the room is visibly poured and forms the ceiling of the space.",
+      "evidence": [
+        "site_00/scene_00012/color.png"
+      ]
+    },
+    {
+      "claimId": "A-0011",
+      "verdict": "no_evidence",
+      "rationale": "Electrical conduit drops are not visible on the walls in the panorama; surfaces show raw brick and concrete without installed conduit drops."
+    },
+    {
+      "claimId": "A-0012",
+      "verdict": "refuted",
+      "rationale": "The concrete ceiling slab is completely exposed, and no suspended ceiling grid has been installed.",
+      "evidence": [
+        "site_00/scene_00018/color.png"
+      ]
+    },
+    {
+      "claimId": "A-0013",
+      "verdict": "supported",
+      "rationale": "Internal walls show applied plaster finishes across multiple visible wall surfaces.",
+      "evidence": [
+        "site_00/scene_00024/color.png"
+      ]
+    },
+    {
+      "claimId": "A-0014",
+      "verdict": "refuted",
+      "rationale": "The floors are unfinished concrete or screed base without final floor coverings such as tiles or parquet laid.",
+      "evidence": [
+        "site_00/scene_00024/color.png"
+      ]
+    },
+    {
+      "claimId": "A-0015",
+      "verdict": "refuted",
+      "rationale": "No radiators are mounted under the windows, and the spaces below the windows are empty.",
+      "evidence": [
+        "site_00/scene_00024/color.png"
+      ]
+    },
+    {
+      "claimId": "A-0016",
+      "verdict": "supported",
+      "rationale": "Unclosed ceiling shafts/openings are clearly visible in the concrete ceiling slab.",
+      "evidence": [
+        "site_00/scene_00030/color.png"
+      ]
+    },
+    {
+      "claimId": "A-0017",
+      "verdict": "refuted",
+      "rationale": "No sprinkler pipework is visible at the ceiling; only raw concrete with core-drilled openings is present.",
+      "evidence": [
+        "site_00/scene_00030/color.png"
+      ]
+    },
+    {
+      "claimId": "A-0018",
+      "verdict": "no_evidence",
+      "rationale": "The walls behind the scanner viewpoint are not visible in the panorama."
+    },
+    {
+      "claimId": "A-0019",
+      "verdict": "refuted",
+      "rationale": "The stair walls show unfinished, rough concrete surfaces without plaster or paint finishes.",
+      "evidence": [
+        "site_01/scene_01000/color.png"
+      ]
+    },
+    {
+      "claimId": "A-0020",
+      "verdict": "refuted",
+      "rationale": "No permanent handrail is fitted to the stair walls or steps.",
+      "evidence": [
+        "site_01/scene_01000/color.png"
+      ]
+    },
+    {
+      "claimId": "A-0021",
+      "verdict": "supported",
+      "rationale": "Electrical conduits and chases are visibly installed along the walls.",
+      "evidence": [
+        "site_01/scene_01003/color.png"
+      ]
+    },
+    {
+      "claimId": "A-0022",
+      "verdict": "supported",
+      "rationale": "Windows with frames and glazing are visible in the background openings.",
+      "evidence": [
+        "site_01/scene_01003/color.png"
+      ]
+    },
+    {
+      "claimId": "A-0023",
+      "verdict": "no_evidence",
+      "rationale": "The visible floor surface appears as rough structural concrete and distinguishing a poured screed layer is not possible from the visual evidence alone."
+    },
+    {
+      "claimId": "A-0024",
+      "verdict": "supported",
+      "rationale": "Wall chases are visibly cut into the concrete walls, and electrical conduits are installed within them.",
+      "evidence": [
+        "site_01/scene_01006/color.png"
+      ]
+    },
+    {
+      "claimId": "A-0025",
+      "verdict": "refuted",
+      "rationale": "The wall chases and conduits are clearly exposed and open; finish plaster has not been applied over them.",
+      "evidence": [
+        "site_01/scene_01006/color.png"
+      ]
+    },
+    {
+      "claimId": "A-0026",
+      "verdict": "refuted",
+      "rationale": "No underfloor heating pipework is visible on the floor surface; only a bare concrete or screed floor is present.",
+      "evidence": [
+        "site_01/scene_01006/color.png"
+      ]
+    },
+    {
+      "claimId": "A-0027",
+      "verdict": "supported",
+      "rationale": "Sanitary carrier frames with connected red supply/drain pipework are clearly visible mounted against the metal-stud partition.",
+      "evidence": [
+        "site_01/scene_01013/color.png"
+      ]
+    },
+    {
+      "claimId": "A-0028",
+      "verdict": "supported",
+      "rationale": "Metal-stud partitions are framed and partial boarding (plasterboard sheets) is clearly installed on the framing.",
+      "evidence": [
+        "site_01/scene_01013/color.png"
+      ]
+    },
+    {
+      "claimId": "A-0029",
+      "verdict": "refuted",
+      "rationale": "The roof insulation surfaces visible overhead show exposed foil/membrane wrapping with Wurth branding and wooden battens, not fully covered by plasterboard.",
+      "evidence": [
+        "site_01/scene_01013/color.png"
+      ]
+    },
+    {
+      "claimId": "A-0030",
+      "verdict": "refuted",
+      "rationale": "Only the rough-in carrier frames and pipework are mounted; the WC pans and basins themselves are not yet installed.",
+      "evidence": [
+        "site_01/scene_01013/color.png"
+      ]
+    },
+    {
+      "claimId": "A-0031",
+      "verdict": "supported",
+      "rationale": "Glazed balcony doors and windows with frames and glazing are clearly visible and installed.",
+      "evidence": [
+        "site_01/scene_01016/color.png"
+      ]
+    },
+    {
+      "claimId": "A-0032",
+      "verdict": "refuted",
+      "rationale": "The partition doorway opening is visible, but no door leaf is hung in the frame.",
+      "evidence": [
+        "site_01/scene_01016/color.png"
+      ]
+    },
+    {
+      "claimId": "A-0033",
+      "verdict": "refuted",
+      "rationale": "No electrical distribution board is visible on the walls; only raw partition walls and conduit paths are present.",
+      "evidence": [
+        "site_01/scene_01016/color.png"
+      ]
+    },
+    {
+      "claimId": "A-0034",
+      "verdict": "refuted",
+      "rationale": "The ceiling of the bay is exposed bare concrete with no ventilation ductwork installed.",
+      "evidence": [
+        "site_02/scene_02000/color.png"
+      ]
+    },
+    {
+      "claimId": "A-0035",
+      "verdict": "supported",
+      "rationale": "Bundles of metal drywall tracks and profiles are clearly visible staged on the floor slab.",
+      "evidence": [
+        "site_02/scene_02000/color.png"
+      ]
+    },
+    {
+      "claimId": "A-0036",
+      "verdict": "refuted",
+      "rationale": "The floor slab is bare and unfinished; no line markings or parking bay paintings are present.",
+      "evidence": [
+        "site_02/scene_02000/color.png"
+      ]
+    },
+    {
+      "claimId": "A-0037",
+      "verdict": "refuted",
+      "rationale": "Galvanized services containment or cable trays are not installed at the ceiling in the visible areas.",
+      "evidence": [
+        "site_02/scene_02005/color.png"
+      ]
+    },
+    {
+      "claimId": "A-0038",
+      "verdict": "refuted",
+      "rationale": "Only a temporary scaffold stair is visible; the permanent stair with balustrade is not complete or installed.",
+      "evidence": [
+        "site_02/scene_02005/color.png"
+      ]
+    },
+    {
+      "claimId": "A-0039",
+      "verdict": "refuted",
+      "rationale": "The floor slab shows standing water and debris, meaning it is neither dry nor cleaned ready for coating.",
+      "evidence": [
+        "site_02/scene_02005/color.png"
+      ]
+    },
+    {
+      "claimId": "A-0040",
+      "verdict": "supported",
+      "rationale": "Windows with frames and glazing are visibly installed along the exterior window line.",
+      "evidence": [
+        "site_03/scene_03000/color.png"
+      ]
+    },
+    {
+      "claimId": "A-0041",
+      "verdict": "supported",
+      "rationale": "Additional glazed elements and window frames are visibly staged and wrapped on pallets on the floor.",
+      "evidence": [
+        "site_03/scene_03000/color.png"
+      ]
+    },
+    {
+      "claimId": "A-0042",
+      "verdict": "refuted",
+      "rationale": "The space consists of an open floor plan with bare concrete columns and walls; no internal partition walls have been built.",
+      "evidence": [
+        "site_03/scene_03000/color.png"
+      ]
+    },
+    {
+      "claimId": "A-0043",
+      "verdict": "no_evidence",
+      "rationale": "The visible floor surface appears to be a structural concrete slab without clear visible layer boundaries or indicators confirming that a separate floor screed has been poured."
+    },
+    {
+      "claimId": "A-0044",
+      "verdict": "supported",
+      "rationale": "The lift shaft opening is covered with black sheeting and protected by safety barriers/hoarding with red-and-white warning tape across the front.",
+      "evidence": [
+        "site_03/scene_03018/color.png"
+      ]
+    },
+    {
+      "claimId": "A-0045",
+      "verdict": "refuted",
+      "rationale": "No sprinkler heads are fitted to the concrete soffit; only bare concrete ceiling panels and occasional pipe penetrations are visible.",
+      "evidence": [
+        "site_03/scene_03018/color.png"
+      ]
+    },
+    {
+      "claimId": "A-0046",
+      "verdict": "supported",
+      "rationale": "Metal-stud partition framing is clearly visible and unboarded.",
+      "evidence": [
+        "site_03/scene_03037/color.png"
+      ]
+    },
+    {
+      "claimId": "A-0047",
+      "verdict": "supported",
+      "rationale": "Sanitary carrier frames and connected riser pipework are clearly visible.",
+      "evidence": [
+        "site_03/scene_03037/color.png"
+      ]
+    },
+    {
+      "claimId": "A-0048",
+      "verdict": "refuted",
+      "rationale": "WC cubicle partitions and sanitaryware are not fitted; only bare frames and rough-in piping are present.",
+      "evidence": [
+        "site_03/scene_03037/color.png"
+      ]
+    },
+    {
+      "claimId": "A-0049",
+      "verdict": "supported",
+      "rationale": "The permanent glass facade with mullion and transom framing is clearly visible and installed across the elevation.",
+      "evidence": [
+        "site_05/scene_05000/color.png"
+      ]
+    },
+    {
+      "claimId": "A-0050",
+      "verdict": "supported",
+      "rationale": "Red and white edge protection rails are visibly installed along the open slab edges.",
+      "evidence": [
+        "site_05/scene_05000/color.png"
+      ]
+    },
+    {
+      "claimId": "A-0051",
+      "verdict": "supported",
+      "rationale": "Drywall boarding is visibly installed on metal stud framing partitions in the space.",
+      "evidence": [
+        "site_05/scene_05021/color.png"
+      ]
+    },
+    {
+      "claimId": "A-0052",
+      "verdict": "supported",
+      "rationale": "Stacks of plasterboard are clearly visible staged on the floor slab.",
+      "evidence": [
+        "site_05/scene_05021/color.png"
+      ]
+    },
+    {
+      "claimId": "A-0053",
+      "verdict": "refuted",
+      "rationale": "The visible drywall surfaces show raw joints and uncompleted boarding without taping and finishing completed across the partitions.",
+      "evidence": [
+        "site_05/scene_05021/color.png"
+      ]
+    },
+    {
+      "claimId": "A-0054",
+      "verdict": "refuted",
+      "rationale": "The core doorways are visible and open with no door leafs fitted.",
+      "evidence": [
+        "site_05/scene_05043/color.png"
+      ]
+    },
+    {
+      "claimId": "A-0055",
+      "verdict": "supported",
+      "rationale": "Temporary sheeting and wooden framing are visible along the facade openings.",
+      "evidence": [
+        "site_05/scene_05043/color.png"
+      ]
+    },
+    {
+      "claimId": "A-0056",
+      "verdict": "refuted",
+      "rationale": "The concrete ceiling is bare and unserviced; no radiant ceiling panels are installed.",
+      "evidence": [
+        "site_05/scene_05043/color.png"
+      ]
+    },
+    {
+      "claimId": "A-0057",
+      "verdict": "supported",
+      "rationale": "Ventilation ductwork and pipe/cable containment are clearly visible installed at the concrete soffit.",
+      "evidence": [
+        "site_08/scene_08000/color.png"
+      ]
+    },
+    {
+      "claimId": "A-0058",
+      "verdict": "supported",
+      "rationale": "Drywall partitions are boarded and joint filler/compound is visible applied over the joints and screw heads.",
+      "evidence": [
+        "site_08/scene_08000/color.png"
+      ]
+    },
+    {
+      "claimId": "A-0059",
+      "verdict": "supported",
+      "rationale": "Glazed facade elements and windows with frames and glass are clearly visible and installed.",
+      "evidence": [
+        "site_08/scene_08000/color.png"
+      ]
+    },
+    {
+      "claimId": "A-0060",
+      "verdict": "refuted",
+      "rationale": "Suspended ceiling tiles are not installed; the concrete soffit and MEP services remain completely exposed.",
+      "evidence": [
+        "site_08/scene_08000/color.png"
+      ]
+    },
+    {
+      "claimId": "A-0061",
+      "verdict": "supported",
+      "rationale": "Cable trays, conduits, and ventilation ductwork are clearly visible installed along the corridor ceiling soffit.",
+      "evidence": [
+        "site_08/scene_08030/color.png"
+      ]
+    },
+    {
+      "claimId": "A-0062",
+      "verdict": "refuted",
+      "rationale": "Corridor door frames are installed, but the door leafs are missing from the visible openings.",
+      "evidence": [
+        "site_08/scene_08030/color.png"
+      ]
+    },
+    {
+      "claimId": "A-0063",
+      "verdict": "refuted",
+      "rationale": "The floor shows an unfinished surface with rough substrate or screed, not a final carpet finish.",
+      "evidence": [
+        "site_08/scene_08030/color.png"
+      ]
+    },
+    {
+      "claimId": "A-0064",
+      "verdict": "no_evidence",
+      "rationale": "While pipes are visible, pressure-testing and the charged status of a sprinkler main cannot be verified visually."
+    },
+    {
+      "claimId": "A-0065",
+      "verdict": "supported",
+      "rationale": "The ceiling is visibly boarded with drywall panels and joints/screw heads are filled with skim plaster.",
+      "evidence": [
+        "site_09/scene_09000/color.png"
+      ]
+    },
+    {
+      "claimId": "A-0066",
+      "verdict": "supported",
+      "rationale": "Historic door casings are visibly covered and protected with protective film and blue/yellow masking tape.",
+      "evidence": [
+        "site_09/scene_09000/color.png"
+      ]
+    },
+    {
+      "claimId": "A-0067",
+      "verdict": "refuted",
+      "rationale": "The brick walls are exposed with visible masonry and mortar joints, and have not been re-plastered.",
+      "evidence": [
+        "site_09/scene_09000/color.png"
+      ]
+    },
+    {
+      "claimId": "A-0068",
+      "verdict": "supported",
+      "rationale": "New black electrical conduits and back-boxes are visible running down the wall chases.",
+      "evidence": [
+        "site_09/scene_09000/color.png"
+      ]
+    },
+    {
+      "claimId": "A-0069",
+      "verdict": "supported",
+      "rationale": "Red socket back-boxes connected to conduits are clearly visible installed on the brick walls.",
+      "evidence": [
+        "site_09/scene_09018/color.png"
+      ]
+    },
+    {
+      "claimId": "A-0070",
+      "verdict": "no_evidence",
+      "rationale": "While a window is visible, there is no comparative visual evidence to establish whether it is newly installed or has replaced an earlier unit."
+    },
+    {
+      "claimId": "A-0071",
+      "verdict": "refuted",
+      "rationale": "The brick walls and vertical electrical chases remain completely unplastered and exposed.",
+      "evidence": [
+        "site_09/scene_09018/color.png"
+      ]
+    },
+    {
+      "claimId": "A-0072",
+      "verdict": "supported",
+      "rationale": "Ceiling electrical boxes and associated cable tails are clearly visible hanging from the ceiling.",
+      "evidence": [
+        "site_12/scene_12013/color.png"
+      ]
+    },
+    {
+      "claimId": "A-0073",
+      "verdict": "refuted",
+      "rationale": "Visible doorways show only empty openings without hung door leaves.",
+      "evidence": [
+        "site_12/scene_12013/color.png"
+      ]
+    },
+    {
+      "claimId": "A-0074",
+      "verdict": "refuted",
+      "rationale": "Walls show raw concrete and unfinished block masonry without skim-plaster finish.",
+      "evidence": [
+        "site_12/scene_12013/color.png"
+      ]
+    },
+    {
+      "claimId": "A-0075",
+      "verdict": "refuted",
+      "rationale": "Ceiling access openings are clearly open and visible with unfinished edges.",
+      "evidence": [
+        "site_12/scene_12013/color.png"
+      ]
+    }
+  ],
+  "track_b": []
+}
